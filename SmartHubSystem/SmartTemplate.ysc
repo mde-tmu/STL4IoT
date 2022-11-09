@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_f16YQPMDEeyp_PZ5lLIHCg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;//IMPORTING LIBRARIES&#xA;import: &quot;Library/WiFi_Component.ysc&quot;&#xA;import: &quot;Library/Power_Component.ysc&quot;&#xA;import: &quot;Library/Sensor_Component.ysc&quot;&#xA;import: &quot;Library/DeviceTemp_Component.ysc&quot;&#xA;import: &quot;Library/Power_Manager.ysc&quot;&#xA;&#xA;&#xA;interface:&#xA;&#xA;//External Library Variable Declarations&#xA;&#x9;var WiFi: WiFi_Component&#xA;&#x9;var Power: Power_Component&#xA;&#x9;var Sensor: Sensor_Component&#xA;&#x9;var Temp: DeviceTemp_Component&#xA;&#x9;var PowerManager: Power_Manager&#xA;&#xA;//HUB Component Received Values&#xA;&#x9;var message: string&#xA;&#x9;&#xA;&#x9;var WiFi_connection: boolean = false&#xA;&#x9;var Sensor_activity: boolean = false&#xA;&#x9;var Temp_value: integer = 0&#xA;&#x9;var Power_total: integer = 0&#xA;&#x9;&#xA;interface device:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var isOn: boolean = false&#xA;&#x9;&#xA;&#x9;&#xA;interface Sensors:&#xA;&#x9;in event detect&#xA;&#x9;in event stillActive&#xA;&#x9;var requestFeedback: boolean = false&#xA;&#xA;&#xA;&#xA;" name="SmartTemplate">
+  <sgraph:Statechart xmi:id="_f16YQPMDEeyp_PZ5lLIHCg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;//IMPORTING LIBRARIES&#xA;import: &quot;Library/WiFi_Component.ysc&quot;&#xA;import: &quot;Library/Power_Component.ysc&quot;&#xA;import: &quot;Library/Sensor_Component.ysc&quot;&#xA;import: &quot;Library/DeviceTemp_Component.ysc&quot;&#xA;import: &quot;Library/Hub_Power_Manager.ysc&quot;&#xA;&#xA;&#xA;interface:&#xA;&#xA;//External Library Variable Declarations&#xA;&#x9;var WiFi: WiFi_Component&#xA;&#x9;var Power: Power_Component&#xA;&#x9;var Sensor: Sensor_Component&#xA;&#x9;var Temp: DeviceTemp_Component&#xA;&#x9;var PowerManager: Hub_Power_Manager&#xA;&#xA;//HUB Component Received Values&#xA;&#x9;var message: string&#xA;&#x9;&#xA;&#x9;var WiFi_connection: boolean = false&#xA;&#x9;var Sensor_activity: boolean = false&#xA;&#x9;var Temp_value: integer = 0&#xA;&#x9;var Power_total: integer = 0&#xA;&#x9;&#xA;interface device:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var isOn: boolean = false&#xA;&#x9;&#xA;&#x9;&#xA;interface Sensors:&#xA;&#x9;in event detect&#xA;&#x9;in event stillActive&#xA;&#x9;var requestFeedback: boolean = false&#xA;&#xA;&#xA;&#xA;" name="SmartTemplate">
     <regions xmi:id="_f2C7I_MDEeyp_PZ5lLIHCg" name="main region">
       <vertices xsi:type="sgraph:State" xmi:id="_k7smUPMDEeyp_PZ5lLIHCg" specification="entry / PowerManager.enter" name="smartDeviceTemplate" incomingTransitions="_SYNAgPMEEeyp_PZ5lLIHCg">
         <regions xmi:id="_k7smU_MDEeyp_PZ5lLIHCg" name="DeviceSwitchStatus">
@@ -17,7 +17,7 @@
               <vertices xsi:type="sgraph:Entry" xmi:id="_sWC-cFtCEe27NrGh0QYi0g">
                 <outgoingTransitions xmi:id="_tHiFwFtCEe27NrGh0QYi0g" target="_tHVRcFtCEe27NrGh0QYi0g"/>
               </vertices>
-              <vertices xsi:type="sgraph:State" xmi:id="_tHVRcFtCEe27NrGh0QYi0g" specification="entry / &#xA;PowerManager.current_device = Power.total" name="SendingInfoToPowerManager" incomingTransitions="_tHiFwFtCEe27NrGh0QYi0g"/>
+              <vertices xsi:type="sgraph:State" xmi:id="_tHVRcFtCEe27NrGh0QYi0g" specification="entry / &#xA;PowerManager.last_value = Power.total" name="SendingInfoToPowerManager" incomingTransitions="_tHiFwFtCEe27NrGh0QYi0g"/>
             </regions>
           </vertices>
         </regions>
@@ -881,7 +881,7 @@
     <edges xmi:id="__b-TkFucEe27NrGh0QYi0g" type="Transition" element="__bzUcFucEe27NrGh0QYi0g" source="_6Wwn3E2nEe2YwegJwBUT5g" target="_6Wwn3E2nEe2YwegJwBUT5g">
       <children xsi:type="notation:DecorationNode" xmi:id="__cAv0FucEe27NrGh0QYi0g" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="__cBW4FucEe27NrGh0QYi0g"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="__cBW4VucEe27NrGh0QYi0g" y="10"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="__cBW4VucEe27NrGh0QYi0g" x="78" y="12"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="__b-TkVucEe27NrGh0QYi0g" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="__b_hsFucEe27NrGh0QYi0g" fontName="Verdana"/>
