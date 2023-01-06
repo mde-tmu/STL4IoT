@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_f16YQPMDEeyp_PZ5lLIHCg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;//IMPORTING LIBRARIES&#xA;//ATOMIC COMPONENTS&#xA;import: &quot;Library/Components/Actuator_Component.ysc&quot;&#xA;import: &quot;Library/Components/Controller_Component.ysc&quot;&#xA;import: &quot;Library/Components/Sensor_Component.ysc&quot;&#xA;//EXTRA COMPONENTS&#xA;import: &quot;Library/Components/WiFi_Component.ysc&quot;&#xA;import: &quot;Library/Components/Power_Component.ysc&quot;&#xA;import: &quot;Library/Components/DeviceTemp_Component.ysc&quot;&#xA;import: &quot;Library/Managers/Hub_Power_Manager.ysc&quot;&#xA;&#xA;//SMART MICROWAVE UNIT&#xA;import: &quot;Library/AutonomousUnits/Microwave_Unit.ysc&quot;&#xA;&#xA;interface:&#xA;&#xA;//External Library Variable Declarations&#xA;&#x9;//ATOMIC&#xA;&#x9;var Actuator: Actuator_Component&#xA;&#x9;var Controller: Controller_Component&#xA;&#x9;var Sensor: Sensor_Component&#xA;&#x9;//EXTRAS&#xA;&#x9;var WiFi: WiFi_Component&#xA;&#x9;var Power: Power_Component&#xA;&#x9;var Temp: DeviceTemp_Component&#xA;&#x9;var PowerManager: Hub_Power_Manager&#xA;&#x9;//MAIN SYSTEM&#xA;&#x9;var MW: Microwave_Unit&#xA;&#xA;//HUB Component Received Values&#xA;&#x9;var message: string&#xA;&#x9;&#xA;&#x9;var WiFi_connection: boolean = false&#xA;&#xA;&#x9;var Temp_value: integer = 50&#xA;&#x9;var Power_input: integer = 10&#xA;&#x9;var Power_total: integer = 0&#xA;&#x9;var Power_required: integer = 10&#xA;&#x9;&#xA;interface system:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var isOn: boolean = false&#xA;&#x9;&#xA;interface SensorInput:&#xA;&#x9;var detection_time: integer = 5&#xA;&#x9;var timeout_time: integer = 8&#xA;&#x9;&#xA;interface SensorOutput:&#xA;&#x9;var counter: integer&#xA;&#x9;var activity: boolean = false&#xA;&#xA;&#xA;&#xA;" name="SmartMicrowaveSystem">
-    <regions xmi:id="_f2C7I_MDEeyp_PZ5lLIHCg" name="main region">
-      <vertices xsi:type="sgraph:State" xmi:id="_k7smUPMDEeyp_PZ5lLIHCg" specification="entry / PowerManager.enter" name="SmartTVSystem" incomingTransitions="_SYNAgPMEEeyp_PZ5lLIHCg">
+  <sgraph:Statechart xmi:id="_f16YQPMDEeyp_PZ5lLIHCg" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;//IMPORTING LIBRARIES&#xA;//ATOMIC COMPONENTS&#xA;import: &quot;Library/Components/Actuator_Component.ysc&quot;&#xA;import: &quot;Library/Components/Controller_Component.ysc&quot;&#xA;import: &quot;Library/Components/Sensor_Component.ysc&quot;&#xA;//EXTRA COMPONENTS&#xA;import: &quot;Library/Components/WiFi_Component.ysc&quot;&#xA;import: &quot;Library/Components/Power_Component.ysc&quot;&#xA;import: &quot;Library/Components/DeviceTemp_Component.ysc&quot;&#xA;&#xA;//SMART MICROWAVE UNIT&#xA;import: &quot;Library/AutonomousUnits/Microwave_Unit.ysc&quot;&#xA;&#xA;interface:&#xA;&#xA;//External Library Variable Declarations&#xA;&#x9;//ATOMIC&#xA;&#x9;var Actuator: Actuator_Component&#xA;&#x9;var Controller: Controller_Component&#xA;&#x9;var Sensor: Sensor_Component&#xA;&#x9;//EXTRAS&#xA;&#x9;var WiFi: WiFi_Component&#xA;&#x9;var Power: Power_Component&#xA;&#x9;var Temp: DeviceTemp_Component&#xA;&#x9;//MAIN SYSTEM&#xA;&#x9;var MW: Microwave_Unit&#xA;&#xA;//HUB Component Received Values&#xA;&#x9;var message: string&#xA;&#x9;&#xA;&#x9;var WiFi_connection: boolean = false&#xA;&#xA;&#x9;var Temp_value: integer = 50&#xA;&#x9;var Power_input: integer = 10&#xA;&#x9;var Power_total: integer = 0&#xA;&#x9;var Power_required: integer = 10&#xA;&#x9;&#xA;interface system:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var isOn: boolean = false&#xA;&#x9;&#xA;interface SensorInput:&#xA;&#x9;var detection_time: integer = 5&#xA;&#x9;var timeout_time: integer = 8&#xA;&#x9;&#xA;interface SensorOutput:&#xA;&#x9;var counter: integer&#xA;&#x9;var activity: boolean = false&#xA;&#xA;&#xA;&#xA;" name="SmartMicrowaveSystem">
+    <regions xmi:id="_f2C7I_MDEeyp_PZ5lLIHCg" name="&lt;SmartMicrowaveSystem>">
+      <vertices xsi:type="sgraph:State" xmi:id="_k7smUPMDEeyp_PZ5lLIHCg" specification="" name="SmartMicrowaveSystem" incomingTransitions="_SYNAgPMEEeyp_PZ5lLIHCg">
         <regions xmi:id="_k7smU_MDEeyp_PZ5lLIHCg" name="SystemStatus">
           <vertices xsi:type="sgraph:Entry" xmi:id="_6WxO4E2nEe2YwegJwBUT5g">
             <outgoingTransitions xmi:id="_6WxO4U2nEe2YwegJwBUT5g" specification="/ MW.enter" target="_6WzEEE2nEe2YwegJwBUT5g"/>
@@ -11,8 +11,8 @@
             <outgoingTransitions xmi:id="_6WzrNE2nEe2YwegJwBUT5g" specification="system.on" target="_6W1gUE2nEe2YwegJwBUT5g"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_6W1gUE2nEe2YwegJwBUT5g" specification="entry/&#xA;system.isOn = true;&#xA;raise Power.on;&#xA;raise Sensor.on;&#xA;raise MW.device.on" name="on" incomingTransitions="_6WzrNE2nEe2YwegJwBUT5g __bzUcFucEe27NrGh0QYi0g">
-            <outgoingTransitions xmi:id="_6W1gZU2nEe2YwegJwBUT5g" specification="system.off,&#xA;PowerManager.return.device_off" target="_6WzEEE2nEe2YwegJwBUT5g"/>
-            <outgoingTransitions xmi:id="__bzUcFucEe27NrGh0QYi0g" specification="after 500 ms" target="_6W1gUE2nEe2YwegJwBUT5g"/>
+            <outgoingTransitions xmi:id="_6W1gZU2nEe2YwegJwBUT5g" specification="system.off" target="_6WzEEE2nEe2YwegJwBUT5g"/>
+            <outgoingTransitions xmi:id="__bzUcFucEe27NrGh0QYi0g" specification="after 1000 ms" target="_6W1gUE2nEe2YwegJwBUT5g"/>
           </vertices>
         </regions>
         <regions xmi:id="_WbTNEPMFEeyp_PZ5lLIHCg" name="ActuatorComponent">
@@ -22,7 +22,7 @@
           <vertices xsi:type="sgraph:State" xmi:id="_jv2P4E2oEe2YwegJwBUT5g" specification="entry /&#xA;//INPUT&#xA;Actuator.Power.deviceInput = Power_input" name="&lt;Actuator_Updates>" incomingTransitions="_jv4FI02oEe2YwegJwBUT5g _sjTpkE2oEe2YwegJwBUT5g _5ZJSQITMEe2UB7B3Yyc5HA">
             <outgoingTransitions xmi:id="_jv23BE2oEe2YwegJwBUT5g" specification="[Actuator.isTriggered]" target="_jv4FEE2oEe2YwegJwBUT5g"/>
             <outgoingTransitions xmi:id="_uaFlAE2oEe2YwegJwBUT5g" specification="system.off" target="_qWt2ME2oEe2YwegJwBUT5g"/>
-            <outgoingTransitions xmi:id="_5ZJSQITMEe2UB7B3Yyc5HA" specification="after 500ms" target="_jv2P4E2oEe2YwegJwBUT5g"/>
+            <outgoingTransitions xmi:id="_5ZJSQITMEe2UB7B3Yyc5HA" specification="after 1000 ms" target="_jv2P4E2oEe2YwegJwBUT5g"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_jv4FEE2oEe2YwegJwBUT5g" specification="entry [Actuator.Device.actuated]/&#xA;message = 'Smart devices main function is here'&#xA;&#xA;every 1s /&#xA;MW.food_inside_sensed = Actuator.isTriggered" name="&lt;Device_Functioning>" incomingTransitions="_jv23BE2oEe2YwegJwBUT5g">
             <outgoingTransitions xmi:id="_jv4FI02oEe2YwegJwBUT5g" specification="[!Actuator.isTriggered]" target="_jv2P4E2oEe2YwegJwBUT5g"/>
@@ -43,7 +43,7 @@
                 <outgoingTransitions xmi:id="_zL7s4oG9Ee2s9dLvof7dFw" target="_zL8T8IG9Ee2s9dLvof7dFw"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_zL8T8IG9Ee2s9dLvof7dFw" specification="entry /&#xA;//INPUT&#xA;Controller.Sensors.triggered = SensorOutput.activity;&#xA;Controller.activity = SensorOutput.activity;&#xA;&#xA;//OUTPUT&#xA;Actuator.isTriggered = Controller.Actuator.triggered" name="&lt;Controller_Updates>" incomingTransitions="_zL7s4oG9Ee2s9dLvof7dFw _zL87DoG9Ee2s9dLvof7dFw">
-                <outgoingTransitions xmi:id="_zL87DoG9Ee2s9dLvof7dFw" specification="after 500 ms" target="_zL8T8IG9Ee2s9dLvof7dFw"/>
+                <outgoingTransitions xmi:id="_zL87DoG9Ee2s9dLvof7dFw" specification="after 1000 ms" target="_zL8T8IG9Ee2s9dLvof7dFw"/>
               </vertices>
             </regions>
           </vertices>
@@ -61,8 +61,8 @@
               <vertices xsi:type="sgraph:Entry" xmi:id="_2tYngFsHEe27NrGh0QYi0g">
                 <outgoingTransitions xmi:id="_5ZfBYFsHEe27NrGh0QYi0g" target="_5ZK4UFsHEe27NrGh0QYi0g"/>
               </vertices>
-              <vertices xsi:type="sgraph:State" xmi:id="_5ZK4UFsHEe27NrGh0QYi0g" specification="entry /&#xA;//OUTPUT FROM THE SENSOR COMPONENT&#xA;SensorOutput.activity = Sensor.activity" name="&lt;Sensor_Updates>" incomingTransitions="_5ZfBYFsHEe27NrGh0QYi0g _CAG48FsIEe27NrGh0QYi0g">
-                <outgoingTransitions xmi:id="_CAG48FsIEe27NrGh0QYi0g" specification="after 500 ms" target="_5ZK4UFsHEe27NrGh0QYi0g"/>
+              <vertices xsi:type="sgraph:State" xmi:id="_5ZK4UFsHEe27NrGh0QYi0g" specification="entry /&#xA;//INPUT INTO THE SENSOR COMPONENT&#xA;Sensor.detection_value = SensorInput.detection_time;&#xA;Sensor.timeout_value = SensorInput.timeout_time;&#xA;&#xA;//OUTPUT FROM THE SENSOR COMPONENT&#xA;SensorOutput.activity = Sensor.activity;&#xA;SensorOutput.counter = Sensor.counter" name="&lt;Sensor_Updates>" incomingTransitions="_5ZfBYFsHEe27NrGh0QYi0g _CAG48FsIEe27NrGh0QYi0g">
+                <outgoingTransitions xmi:id="_CAG48FsIEe27NrGh0QYi0g" specification="after 1000 ms" target="_5ZK4UFsHEe27NrGh0QYi0g"/>
               </vertices>
             </regions>
           </vertices>
@@ -72,20 +72,20 @@
         </regions>
         <regions xmi:id="_k7wQtPMDEeyp_PZ5lLIHCg" name="WiFiGateway">
           <vertices xsi:type="sgraph:Entry" xmi:id="_DpQIYFsFEe27NrGh0QYi0g">
-            <outgoingTransitions xmi:id="_Ba6OcFs6Ee27NrGh0QYi0g" specification="/ WiFi.enter" target="_xxckgHWLEe2GJo8Nlt2aLw"/>
+            <outgoingTransitions xmi:id="_Ba6OcFs6Ee27NrGh0QYi0g" specification="/ WiFi.enter" target="_AQoMoFs6Ee27NrGh0QYi0g"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_AQoMoFs6Ee27NrGh0QYi0g" specification="entry/&#xA;WiFi.enter" name="&lt;Initialize_WiFi_Component>" incomingTransitions="_4Fk1AHWLEe2GJo8Nlt2aLw">
+          <vertices xsi:type="sgraph:State" xmi:id="_AQoMoFs6Ee27NrGh0QYi0g" specification="" name="&lt;Initialize_WiFi_Component>" incomingTransitions="_4Fk1AHWLEe2GJo8Nlt2aLw _Ba6OcFs6Ee27NrGh0QYi0g">
             <outgoingTransitions xmi:id="_5flU4HWLEe2GJo8Nlt2aLw" specification="system.off" target="_xxckgHWLEe2GJo8Nlt2aLw"/>
             <regions xmi:id="_AQoMr1s6Ee27NrGh0QYi0g" name="updating">
               <vertices xsi:type="sgraph:Entry" xmi:id="_AQoMsFs6Ee27NrGh0QYi0g">
                 <outgoingTransitions xmi:id="_AQoMsVs6Ee27NrGh0QYi0g" target="_AQoMsls6Ee27NrGh0QYi0g"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_AQoMsls6Ee27NrGh0QYi0g" specification="entry /&#xA;//OUTPUT FROM WIFI COMPONENT&#xA;WiFi_connection = WiFi.connection" name="&lt;WiFi_Updates>" incomingTransitions="_AQoMsVs6Ee27NrGh0QYi0g _AQozu1s6Ee27NrGh0QYi0g">
-                <outgoingTransitions xmi:id="_AQozu1s6Ee27NrGh0QYi0g" specification="after 500 ms" target="_AQoMsls6Ee27NrGh0QYi0g"/>
+                <outgoingTransitions xmi:id="_AQozu1s6Ee27NrGh0QYi0g" specification="after 1000 ms" target="_AQoMsls6Ee27NrGh0QYi0g"/>
               </vertices>
             </regions>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_xxckgHWLEe2GJo8Nlt2aLw" specification="entry/ raise WiFi.off&#xA;exit / raise WiFi.on" name="off" incomingTransitions="_Ba6OcFs6Ee27NrGh0QYi0g _5flU4HWLEe2GJo8Nlt2aLw">
+          <vertices xsi:type="sgraph:State" xmi:id="_xxckgHWLEe2GJo8Nlt2aLw" specification="entry/ raise WiFi.off&#xA;exit / raise WiFi.on" name="off" incomingTransitions="_5flU4HWLEe2GJo8Nlt2aLw">
             <outgoingTransitions xmi:id="_4Fk1AHWLEe2GJo8Nlt2aLw" specification="system.on" target="_AQoMoFs6Ee27NrGh0QYi0g"/>
           </vertices>
         </regions>
@@ -93,14 +93,14 @@
           <vertices xsi:type="sgraph:Entry" xmi:id="_uubrvPMDEeyp_PZ5lLIHCg">
             <outgoingTransitions xmi:id="_Sob9IFsIEe27NrGh0QYi0g" specification="/ Power.enter" target="_mrlqYHWLEe2GJo8Nlt2aLw"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_RVqGoFsIEe27NrGh0QYi0g" specification="entry / Power.kilowatt = Power_input" name="&lt;Initialize_Power_Component>" incomingTransitions="_t9JzgHWLEe2GJo8Nlt2aLw">
+          <vertices xsi:type="sgraph:State" xmi:id="_RVqGoFsIEe27NrGh0QYi0g" specification="" name="&lt;Initialize_Power_Component>" incomingTransitions="_t9JzgHWLEe2GJo8Nlt2aLw">
             <outgoingTransitions xmi:id="_wVwpoHWLEe2GJo8Nlt2aLw" specification="system.off" target="_mrlqYHWLEe2GJo8Nlt2aLw"/>
             <regions xmi:id="_RVqtt1sIEe27NrGh0QYi0g" name="updating">
               <vertices xsi:type="sgraph:Entry" xmi:id="_RVqtuFsIEe27NrGh0QYi0g">
                 <outgoingTransitions xmi:id="_RVqtuVsIEe27NrGh0QYi0g" target="_RVqtulsIEe27NrGh0QYi0g"/>
               </vertices>
-              <vertices xsi:type="sgraph:State" xmi:id="_RVqtulsIEe27NrGh0QYi0g" specification="entry /&#xA;Power_total = Power.total" name="&lt;Power_Updates>" incomingTransitions="_RVqtuVsIEe27NrGh0QYi0g _RVqtxlsIEe27NrGh0QYi0g">
-                <outgoingTransitions xmi:id="_RVqtxlsIEe27NrGh0QYi0g" specification="after 500 ms" target="_RVqtulsIEe27NrGh0QYi0g"/>
+              <vertices xsi:type="sgraph:State" xmi:id="_RVqtulsIEe27NrGh0QYi0g" specification="entry /&#xA;//SYSTEM SPECIFIC INPUT&#xA;Power.device.isOn = system.isOn;&#xA;Power.kilowatt = Power_input;&#xA;&#xA;//POWER COMPONENT OUTPUT&#xA;Power_total = Power.kWh" name="&lt;Power_Updates>" incomingTransitions="_RVqtuVsIEe27NrGh0QYi0g _RVqtxlsIEe27NrGh0QYi0g">
+                <outgoingTransitions xmi:id="_RVqtxlsIEe27NrGh0QYi0g" specification="after 1000 ms" target="_RVqtulsIEe27NrGh0QYi0g"/>
               </vertices>
             </regions>
           </vertices>
@@ -119,7 +119,7 @@
                 <outgoingTransitions xmi:id="_6HhH6VsOEe27NrGh0QYi0g" target="_6HhH6lsOEe27NrGh0QYi0g"/>
               </vertices>
               <vertices xsi:type="sgraph:State" xmi:id="_6HhH6lsOEe27NrGh0QYi0g" specification="entry /&#xA;Temp_value = Temp.Heat.level" name="&lt;Temperature_Updates>" incomingTransitions="_6HhH6VsOEe27NrGh0QYi0g _6HhH9lsOEe27NrGh0QYi0g">
-                <outgoingTransitions xmi:id="_6HhH9lsOEe27NrGh0QYi0g" specification="after 500 ms" target="_6HhH6lsOEe27NrGh0QYi0g"/>
+                <outgoingTransitions xmi:id="_6HhH9lsOEe27NrGh0QYi0g" specification="after 1000 ms" target="_6HhH6lsOEe27NrGh0QYi0g"/>
               </vertices>
             </regions>
           </vertices>
@@ -1006,7 +1006,7 @@
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_AQtFLls6Ee27NrGh0QYi0g" id="(0.9475524475524476,0.9280575539568345)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_AQtFL1s6Ee27NrGh0QYi0g" id="(0.9475524475524476,0.9280575539568345)"/>
     </edges>
-    <edges xmi:id="_BbZ9sFs6Ee27NrGh0QYi0g" type="Transition" element="_Ba6OcFs6Ee27NrGh0QYi0g" source="_DpZSUFsFEe27NrGh0QYi0g" target="_xynpMHWLEe2GJo8Nlt2aLw">
+    <edges xmi:id="_BbZ9sFs6Ee27NrGh0QYi0g" type="Transition" element="_Ba6OcFs6Ee27NrGh0QYi0g" source="_DpZSUFsFEe27NrGh0QYi0g" target="_AQiGAFs6Ee27NrGh0QYi0g">
       <children xsi:type="notation:DecorationNode" xmi:id="_BbePIFs6Ee27NrGh0QYi0g" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_Bbe2MFs6Ee27NrGh0QYi0g"/>
         <layoutConstraint xsi:type="notation:Location" xmi:id="_Bbe2MVs6Ee27NrGh0QYi0g" x="4" y="-13"/>
@@ -1014,7 +1014,7 @@
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_BbakwFs6Ee27NrGh0QYi0g" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_BbdBAFs6Ee27NrGh0QYi0g" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_BbakwVs6Ee27NrGh0QYi0g" points="[6, 2, -253, -29]$[250, 2, -9, -29]$[250, 23, -9, -8]"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_Bb33wFs6Ee27NrGh0QYi0g" id="(0.559322033898305,0.1509433962264151)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_Bb33wFs6Ee27NrGh0QYi0g" id="(0.018421052631578946,0.041666666666666664)"/>
     </edges>
     <edges xmi:id="__b-TkFucEe27NrGh0QYi0g" type="Transition" element="__bzUcFucEe27NrGh0QYi0g" source="_6Wwn3E2nEe2YwegJwBUT5g" target="_6Wwn3E2nEe2YwegJwBUT5g">
       <children xsi:type="notation:DecorationNode" xmi:id="__cAv0FucEe27NrGh0QYi0g" type="TransitionExpression">

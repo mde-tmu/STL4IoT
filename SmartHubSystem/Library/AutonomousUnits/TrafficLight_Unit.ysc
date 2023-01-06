@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
   <sgraph:Statechart xmi:id="_HRPgsGDBEe2dEf8DdsbWFg" specification="@EventDriven&#xA;@SuperSteps(no)&#xA;&#xA;//TRAFFIC LIGHT UNIT IS FULLY AUTOMATED&#xA;interface:&#xA;in event on&#xA;&#x9;in event off&#xA;&#xA;interface device:&#xA;&#x9;var crossingButton_triggered: boolean = false&#xA;&#x9;var isOn: boolean = false&#xA;&#x9;&#xA;interface Light:&#xA;&#x9;var color: string&#xA;&#x9;var pedestrian: string&#xA;&#x9;&#xA;&#x9;out event red&#xA;&#x9;out event yellow&#xA;&#x9;out event green&#xA;&#x9;&#xA;interface Timer:&#xA;&#x9;out event reset&#xA;&#x9;&#xA;&#x9;var counter: integer = 10&#xA;&#x9;var green_period: integer = 15&#xA;&#x9;var red_period: integer = 5&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;" name="TrafficLight_Unit">
-    <regions xmi:id="_HRXcg2DBEe2dEf8DdsbWFg" name="xs">
+    <regions xmi:id="_HRXcg2DBEe2dEf8DdsbWFg" name="&lt;TrafficLight_Unit>">
       <vertices xsi:type="sgraph:Entry" xmi:id="_HRXchGDBEe2dEf8DdsbWFg">
         <outgoingTransitions xmi:id="_HRXchWDBEe2dEf8DdsbWFg" target="_HRYDkGDBEe2dEf8DdsbWFg"/>
       </vertices>

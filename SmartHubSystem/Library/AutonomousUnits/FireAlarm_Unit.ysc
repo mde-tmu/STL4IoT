@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_UCD7gITWEe2xcIFyeWpeZw" specification="@EventDriven&#xA;@ChildFirstExecution&#xA;&#xA;interface:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;&#xA;&#x9;interface Timer:&#xA;&#x9;&#x9;in event enable&#xA;&#x9;&#x9;in event disable&#xA;&#x9;&#x9;in event reset&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;var counter: integer&#xA;&#x9;&#x9;var warning_period: integer = 10&#xA;&#x9;&#x9;var final_warning_period: integer = 5&#xA;&#x9;&#x9;&#xA;&#x9;interface Message:&#xA;&#x9;&#x9;var status: string&#xA;&#x9;&#x9;var sensor: string&#xA;&#xA;&#x9;interface Mode:&#xA;&#x9;&#x9;in event safe&#xA;&#x9;&#x9;in event warning&#xA;&#x9;&#x9;in event final_warning&#xA;&#x9;&#x9;in event danger&#xA;&#x9;&#x9;&#xA;&#x9;interface Alarm:&#xA;&#x9;&#x9;var threshold_reached:  boolean = false&#xA;&#x9;&#x9;var sound: boolean = false&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//MANUAL SWITCH&#xA;&#x9;&#x9;in event off&#xA;&#x9;&#x9;in event on&#xA;&#x9;&#x9;&#xA;&#x9;interface Sensors:&#xA;&#x9;&#x9;var triggerSignal_received: boolean&#xA;&#x9;&#x9;var smoke_value: integer&#xA;&#x9;&#x9;var carbon_value: integer&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Increment can be randomize using JAVA Code&#xA;&#x9;&#x9;var smoke_increment: integer = 1&#xA;&#x9;&#x9;var carbon_increment: integer = 1&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Threshold&#xA;&#x9;&#x9;var smoke_threshold: integer = 20&#xA;&#x9;&#x9;var carbon_threshold: integer = 20&#xA;&#x9;&#x9;" name="FireAlarm_Unit">
+  <sgraph:Statechart xmi:id="_UCD7gITWEe2xcIFyeWpeZw" specification="@EventDriven&#xA;@ChildFirstExecution&#xA;&#xA;interface:&#xA;&#x9;// Define events and variables here. &#xA;&#x9;// Use CTRL + Space for content assist.&#xA;&#x9;&#xA;&#x9;&#x9;var warned: boolean&#xA;&#x9;&#x9;&#xA;&#x9;interface Timer:&#xA;&#x9;&#x9;in event enable&#xA;&#x9;&#x9;in event disable&#xA;&#x9;&#x9;in event reset&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;var counter: integer&#xA;&#x9;&#x9;var warning_period: integer = 10&#xA;&#x9;&#x9;var final_warning_period: integer = 5&#xA;&#x9;&#x9;&#xA;&#x9;interface Message:&#xA;&#x9;&#x9;var status: string&#xA;&#x9;&#x9;var sensor: string&#xA;&#xA;&#x9;interface Mode:&#xA;&#x9;&#x9;in event safe&#xA;&#x9;&#x9;in event warning&#xA;&#x9;&#x9;in event final_warning&#xA;&#x9;&#x9;in event danger&#xA;&#x9;&#x9;&#xA;&#x9;interface Alarm:&#xA;&#x9;&#x9;var threshold_reached:  boolean = false&#xA;&#x9;&#x9;var sound: boolean = false&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//MANUAL SWITCH&#xA;&#x9;&#x9;in event off&#xA;&#x9;&#x9;in event on&#xA;&#x9;&#x9;&#xA;&#x9;interface Sensors:&#xA;&#x9;&#x9;var triggerSignal_received: boolean&#xA;&#x9;&#x9;var smoke_value: integer&#xA;&#x9;&#x9;var carbon_value: integer&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Increment can be randomize using JAVA Code&#xA;&#x9;&#x9;var smoke_increment: integer = 1&#xA;&#x9;&#x9;var carbon_increment: integer = 1&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Threshold&#xA;&#x9;&#x9;var smoke_threshold: integer = 20&#xA;&#x9;&#x9;var carbon_threshold: integer = 20&#xA;&#x9;&#x9;" name="FireAlarm_Unit">
     <regions xmi:id="_UCQv04TWEe2xcIFyeWpeZw" name="&lt;FireAlarm_Unit>">
       <vertices xsi:type="sgraph:Entry" xmi:id="_UCQv1ITWEe2xcIFyeWpeZw">
         <outgoingTransitions xmi:id="_UCQv1YTWEe2xcIFyeWpeZw" target="_UCQv1oTWEe2xcIFyeWpeZw"/>
@@ -10,10 +10,10 @@
           <vertices xsi:type="sgraph:Entry" xmi:id="_vYilMIVqEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_yc_NoIVqEe2xcIFyeWpeZw" specification="" target="_v9FcsIVqEe2xcIFyeWpeZw"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_v9FcsIVqEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = true" name="&lt;Alarm_Off>" incomingTransitions="_yc_NoIVqEe2xcIFyeWpeZw _3jIBAIVqEe2xcIFyeWpeZw">
+          <vertices xsi:type="sgraph:State" xmi:id="_v9FcsIVqEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = false" name="Alarm_Off" incomingTransitions="_yc_NoIVqEe2xcIFyeWpeZw _3jIBAIVqEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_0xrNEIVqEe2xcIFyeWpeZw" specification="Mode.danger" target="_y5bSAIVqEe2xcIFyeWpeZw"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_y5bSAIVqEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = false" name="&lt;Alarm_Sounding>" incomingTransitions="_0xrNEIVqEe2xcIFyeWpeZw">
+          <vertices xsi:type="sgraph:State" xmi:id="_y5bSAIVqEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = true" name="Alarm_Sounding" incomingTransitions="_0xrNEIVqEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_3jIBAIVqEe2xcIFyeWpeZw" specification="Mode.safe" target="_v9FcsIVqEe2xcIFyeWpeZw"/>
           </vertices>
         </regions>
@@ -21,11 +21,11 @@
           <vertices xsi:type="sgraph:Entry" xmi:id="_ymqGaoTWEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_ymqGa4TWEe2xcIFyeWpeZw" specification="" target="_ym-2YITWEe2xcIFyeWpeZw"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_ym-2YITWEe2xcIFyeWpeZw" specification="entry /&#xA;//STATUS UPDATES&#xA;Message.status = &quot;SAFE&quot;;&#xA;raise Mode.safe;&#xA;&#xA;//TIMER UPDATES&#xA;raise Timer.disable;&#xA;Timer.counter = Timer.warning_period;&#xA;&#xA;//ALARM UPDATES&#xA;Alarm.threshold_reached = false;&#xA;Alarm.sound = false" name="Safe" incomingTransitions="_ymqGa4TWEe2xcIFyeWpeZw _ynJ1kITWEe2xcIFyeWpeZw _ynHZTYTWEe2xcIFyeWpeZw">
+          <vertices xsi:type="sgraph:State" xmi:id="_ym-2YITWEe2xcIFyeWpeZw" specification="entry /&#xA;//STATUS UPDATES&#xA;Message.status = &quot;SAFE&quot;;&#xA;raise Mode.safe;&#xA;&#xA;//TIMER UPDATES&#xA;raise Timer.disable;&#xA;&#xA;//ALARM UPDATES&#xA;Alarm.threshold_reached = false;&#xA;Alarm.sound = false" name="Safe" incomingTransitions="_ymqGa4TWEe2xcIFyeWpeZw _ynJ1kITWEe2xcIFyeWpeZw _ynHZTYTWEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_ynAEyITWEe2xcIFyeWpeZw" specification="Mode.warning" target="_ynGyMITWEe2xcIFyeWpeZw"/>
             <outgoingTransitions xmi:id="_ynBSpITWEe2xcIFyeWpeZw" specification="Mode.danger,&#xA;Alarm.on" target="_ynJOcITWEe2xcIFyeWpeZw"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_ynGyMITWEe2xcIFyeWpeZw" specification="entry /&#xA;raise Mode.warning;&#xA;Message.status = &quot;WARNING&quot;" name="Warning" incomingTransitions="_ynAEyITWEe2xcIFyeWpeZw">
+          <vertices xsi:type="sgraph:State" xmi:id="_ynGyMITWEe2xcIFyeWpeZw" specification="entry /&#xA;raise Mode.warning;&#xA;Message.status = &quot;WARNING&quot;;&#xA;warned = true&#xA;&#xA;exit/ warned = false" name="Warning" incomingTransitions="_ynAEyITWEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_ynHZTYTWEe2xcIFyeWpeZw" specification="Alarm.off" target="_ym-2YITWEe2xcIFyeWpeZw"/>
             <regions xmi:id="_ynHZUoTWEe2xcIFyeWpeZw" name="Level">
               <vertices xsi:type="sgraph:State" xmi:id="_ynHZU4TWEe2xcIFyeWpeZw" specification="entry/&#xA;raise Timer.enable" name="initial_warning" incomingTransitions="_ynIAXYTWEe2xcIFyeWpeZw">
@@ -39,7 +39,7 @@
               </vertices>
             </regions>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_ynJOcITWEe2xcIFyeWpeZw" specification="entry /&#xA;raise Mode.danger" name="Danger" incomingTransitions="_ynIAWITWEe2xcIFyeWpeZw _ynBSpITWEe2xcIFyeWpeZw">
+          <vertices xsi:type="sgraph:State" xmi:id="_ynJOcITWEe2xcIFyeWpeZw" specification="entry /&#xA;raise Mode.danger;&#xA;Alarm.sound = true" name="Danger" incomingTransitions="_ynIAWITWEe2xcIFyeWpeZw _ynBSpITWEe2xcIFyeWpeZw">
             <outgoingTransitions xmi:id="_ynJ1kITWEe2xcIFyeWpeZw" specification="Mode.safe,&#xA;Alarm.off" target="_ym-2YITWEe2xcIFyeWpeZw"/>
             <regions xmi:id="_ynJ1mITWEe2xcIFyeWpeZw" name="&lt;911_activated>">
               <vertices xsi:type="sgraph:Entry" xmi:id="_ynJ1mYTWEe2xcIFyeWpeZw">
@@ -51,7 +51,6 @@
         </regions>
         <regions xmi:id="_t3jQ0ITsEe2xcIFyeWpeZw" name="Monitoring_Sensor_Level">
           <vertices xsi:type="sgraph:State" xmi:id="_zZMUcITsEe2xcIFyeWpeZw" specification="exit / Alarm.threshold_reached = true" name="&lt;Sensor_Triggered>" incomingTransitions="_zZf2mYTsEe2xcIFyeWpeZw">
-            <outgoingTransitions xmi:id="_zZMUoYTsEe2xcIFyeWpeZw" specification="[active(Status.Danger)]" target="_zZeoe4TsEe2xcIFyeWpeZw"/>
             <outgoingTransitions xmi:id="_jW0tgIVvEe2Vo8nFLHkgfw" specification="Mode.safe, Alarm.off" target="_zZf2cITsEe2xcIFyeWpeZw"/>
             <regions xmi:id="_zZM7g4TsEe2xcIFyeWpeZw" name="smokeSensor">
               <vertices xsi:type="sgraph:State" xmi:id="_zZM7hITsEe2xcIFyeWpeZw" specification="every 1s/&#xA;Sensors.smoke_value += Sensors.smoke_increment" name="&lt;Monitoring_Smoke_Level>" incomingTransitions="_zZNinYTsEe2xcIFyeWpeZw">
@@ -79,7 +78,7 @@
               <vertices xsi:type="sgraph:State" xmi:id="_zZeobYTsEe2xcIFyeWpeZw" specification="entry / &#xA;raise Mode.warning" name="SensorWarning" incomingTransitions="_zZeobITsEe2xcIFyeWpeZw">
                 <outgoingTransitions xmi:id="_zZeodoTsEe2xcIFyeWpeZw" specification="Mode.danger" target="_zZeoe4TsEe2xcIFyeWpeZw"/>
               </vertices>
-              <vertices xsi:type="sgraph:State" xmi:id="_zZeoe4TsEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = true" name="SoundAlarm" incomingTransitions="_zZeodoTsEe2xcIFyeWpeZw _zZMUoYTsEe2xcIFyeWpeZw"/>
+              <vertices xsi:type="sgraph:State" xmi:id="_zZeoe4TsEe2xcIFyeWpeZw" specification="entry /&#xA;Alarm.sound = true" name="SoundAlarm" incomingTransitions="_zZeodoTsEe2xcIFyeWpeZw"/>
             </regions>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_zZf2cITsEe2xcIFyeWpeZw" specification="entry /&#xA;Message.sensor = &quot;Sensors are on Standby&quot;;&#xA;Sensors.triggerSignal_received = false;&#xA;Sensors.smoke_value = 0;&#xA;Sensors.carbon_value = 0" name="&lt;Sensor_Value_Monitor_onStandby>" incomingTransitions="_zZgdgYTsEe2xcIFyeWpeZw _zZeoZYTsEe2xcIFyeWpeZw _jW0tgIVvEe2Vo8nFLHkgfw">
@@ -182,7 +181,7 @@
                   <styles xsi:type="notation:ShapeStyle" xmi:id="_v9LjUYVqEe2xcIFyeWpeZw" fontName="Verdana" fillColor="15720400" lineColor="12632256"/>
                   <styles xsi:type="notation:FontStyle" xmi:id="_v9LjUoVqEe2xcIFyeWpeZw"/>
                   <styles xsi:type="notation:BooleanValueStyle" xmi:id="_v9OmoIVqEe2xcIFyeWpeZw" name="isHorizontal" booleanValue="true"/>
-                  <layoutConstraint xsi:type="notation:Bounds" xmi:id="_v9LjU4VqEe2xcIFyeWpeZw" x="34" y="47" width="114" height="53"/>
+                  <layoutConstraint xsi:type="notation:Bounds" xmi:id="_v9LjU4VqEe2xcIFyeWpeZw" x="28" y="47" width="124" height="53"/>
                 </children>
                 <children xmi:id="_y5e8YIVqEe2xcIFyeWpeZw" type="State" element="_y5bSAIVqEe2xcIFyeWpeZw">
                   <children xsi:type="notation:DecorationNode" xmi:id="_y5fjcIVqEe2xcIFyeWpeZw" type="StateName">
@@ -726,7 +725,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UCVod4TWEe2xcIFyeWpeZw"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_UCVoeITWEe2xcIFyeWpeZw" fontName="Verdana" fillColor="16448250" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UCVoeYTWEe2xcIFyeWpeZw" x="205" y="10" width="2190" height="1353"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UCVoeYTWEe2xcIFyeWpeZw" x="414" width="2117" height="848"/>
     </children>
     <children xsi:type="notation:Shape" xmi:id="_UCVoeoTWEe2xcIFyeWpeZw" type="StatechartText" fontName="Verdana" lineColor="4210752">
       <children xsi:type="notation:DecorationNode" xmi:id="_UCVoe4TWEe2xcIFyeWpeZw" type="StatechartName">
@@ -1000,23 +999,12 @@
     <edges xmi:id="_zZiSwoTsEe2xcIFyeWpeZw" type="Transition" element="_zZeoZYTsEe2xcIFyeWpeZw" source="_zZLGUITsEe2xcIFyeWpeZw" target="_zZLtYITsEe2xcIFyeWpeZw">
       <children xsi:type="notation:DecorationNode" xmi:id="_zZiSw4TsEe2xcIFyeWpeZw" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_zZiSxITsEe2xcIFyeWpeZw"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_zZiSxYTsEe2xcIFyeWpeZw" x="-204" y="-390"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_zZiSxYTsEe2xcIFyeWpeZw" x="-7" y="-26"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_zZiSxoTsEe2xcIFyeWpeZw" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_zZiSx4TsEe2xcIFyeWpeZw" fontName="Verdana"/>
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_zZiSyITsEe2xcIFyeWpeZw" points="[211, 142, -2, 580]$[211, 154, -2, 592]$[526, 154, 313, 592]$[526, -433, 313, 5]$[334, -433, 121, 5]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_zZiSyYTsEe2xcIFyeWpeZw" id="(0.0035087719298245615,0.23508771929824562)"/>
-    </edges>
-    <edges xmi:id="_zZiSyoTsEe2xcIFyeWpeZw" type="Transition" element="_zZMUoYTsEe2xcIFyeWpeZw" source="_zZE_sITsEe2xcIFyeWpeZw" target="_zZLGc4TsEe2xcIFyeWpeZw">
-      <children xsi:type="notation:DecorationNode" xmi:id="_zZiSy4TsEe2xcIFyeWpeZw" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_zZiSzITsEe2xcIFyeWpeZw"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_zZiSzYTsEe2xcIFyeWpeZw" x="-116" y="9"/>
-      </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_zZiSzoTsEe2xcIFyeWpeZw" routing="Rectilinear" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_zZiSz4TsEe2xcIFyeWpeZw" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_zZiS0ITsEe2xcIFyeWpeZw" points="[12, 207, 104, -267]$[12, 492, 104, 18]$[-45, 492, 47, 18]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_zZiS0YTsEe2xcIFyeWpeZw" id="(0.8873456790123457,0.032679738562091505)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_zZiS0oTsEe2xcIFyeWpeZw" id="(0.6148148148148148,0.17346938775510204)"/>
     </edges>
     <edges xmi:id="_zZiS5YTsEe2xcIFyeWpeZw" type="Transition" element="_zZOJpoTsEe2xcIFyeWpeZw" source="_zZE_84TsEe2xcIFyeWpeZw" target="_zZE_54TsEe2xcIFyeWpeZw">
       <children xsi:type="notation:DecorationNode" xmi:id="_zZiS5oTsEe2xcIFyeWpeZw" type="TransitionExpression">
@@ -1046,7 +1034,7 @@
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_ydHwgYVqEe2xcIFyeWpeZw" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_ydIXkIVqEe2xcIFyeWpeZw" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_ydHwgoVqEe2xcIFyeWpeZw" points="[8, 5, -95, -43]$[62, 5, -41, -43]$[62, 42, -41, -6]"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_ydHwgoVqEe2xcIFyeWpeZw" points="[8, 5, -96, -43]$[62, 5, -42, -43]$[62, 42, -42, -6]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_ydY2QIVqEe2xcIFyeWpeZw" id="(0.4,0.13333333333333333)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_ydY2QYVqEe2xcIFyeWpeZw" id="(0.6296296296296297,0.11320754716981132)"/>
     </edges>
@@ -1057,7 +1045,7 @@
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_0x3aUYVqEe2xcIFyeWpeZw" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_0x3aU4VqEe2xcIFyeWpeZw" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_0x3aUoVqEe2xcIFyeWpeZw" points="[1, 10, -14, -114]$[1, 104, -14, -20]"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_0x3aUoVqEe2xcIFyeWpeZw" points="[6, 10, -14, -114]$[6, 104, -14, -20]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_0x854IVqEe2xcIFyeWpeZw" id="(0.07407407407407407,0.8113207547169812)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_0x854YVqEe2xcIFyeWpeZw" id="(0.24778761061946902,0.37735849056603776)"/>
     </edges>
@@ -1068,7 +1056,7 @@
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_3jJ2MYVqEe2xcIFyeWpeZw" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_3jKdQIVqEe2xcIFyeWpeZw" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_3jJ2MoVqEe2xcIFyeWpeZw" points="[4, -9, -10, 130]$[4, -103, -10, 36]"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_3jJ2MoVqEe2xcIFyeWpeZw" points="[4, -9, -12, 130]$[4, -103, -12, 36]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_3jP80IVqEe2xcIFyeWpeZw" id="(0.7610619469026548,0.16981132075471697)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_3jP80YVqEe2xcIFyeWpeZw" id="(0.8518518518518519,0.32075471698113206)"/>
     </edges>

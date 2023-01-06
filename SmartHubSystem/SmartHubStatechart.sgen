@@ -1,0 +1,368 @@
+GeneratorModel for yakindu::java {
+
+	const PROJECT : string = "SmartHubSystem"
+
+	const FOLDER : string = "src"
+	
+	const BASE_PACKAGE : string = "smarthub.java"
+
+	statechart Elevator_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart FireAlarm_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart LEDLight_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Microwave_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart RoomTemp_Plugin {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart TV_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Timer_Countdown {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart TrafficLight_Unit {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Actuator_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Controller_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart DeviceTemp_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Power_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Sensor_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart WiFi_Component {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart HubTemplate {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Active_Systems_Counter {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart Hub_Power_Manager {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartTemplate {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartFireSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartHubSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartLightSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartMicrowaveSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartTVSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+
+	statechart SmartTrafficLightSystem {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+		feature Naming {
+			basePackage =  BASE_PACKAGE 
+		}
+		feature GeneralFeatures {
+			TimerService = true
+			synchronized = true
+		}
+	}
+}

@@ -6,4 +6,5 @@
  *
  */
 module SmartHubSystem {
+	requires java.desktop;
 }

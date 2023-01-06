@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_R4oYMFsFEe27NrGh0QYi0g" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;&#xA;//DOCUMENTATION&#xA;/*&#xA; * This component calculates the power consumption of a smart device&#xA; * This component can be imported into a template used&#xA; * Variables used in this component can be changed depending on the device.&#xA; * &#xA; * &#xA; */&#xA;interface:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var total: integer = 0&#xA;&#x9;var kilowatt: integer = 1&#xA;&#x9;var hour: integer = 0/60&#xA;&#x9;var totalSeconds: integer = 10&#xA;&#x9;&#xA;interface device:&#xA;&#x9;var isOn: boolean&#xA;" name="Power_Component">
+  <sgraph:Statechart xmi:id="_R4oYMFsFEe27NrGh0QYi0g" specification="// Use the event driven execution model.&#xA;// Switch to cycle based behavior&#xA;// by specifying '@CycleBased(200)'.&#xA;@EventDriven&#xA;&#xA;// Use @SuperSteps(yes) to enable&#xA;// super step semantics.&#xA;@SuperSteps(no)&#xA;&#xA;&#xA;//DOCUMENTATION&#xA;/*&#xA; * This component calculates the power consumption of a smart device&#xA; * This component can be imported into a template used&#xA; * Variables used in this component can be changed depending on the device.&#xA; * &#xA; * &#xA; */&#xA;interface:&#xA;&#x9;in event on&#xA;&#x9;in event off&#xA;&#x9;var kWh: integer = 0&#xA;&#x9;var kilowatt: integer = 20&#xA;&#x9;var hour: integer = 1&#xA;&#x9;var totalPower: integer&#xA;&#x9;var totalHour: integer&#xA;&#x9;&#xA;interface device:&#xA;&#x9;var isOn: boolean&#xA;" name="Power_Component">
     <regions xmi:id="_R4qNY1sFEe27NrGh0QYi0g" name="main region">
       <vertices xsi:type="sgraph:Entry" xmi:id="_R4qNZFsFEe27NrGh0QYi0g">
         <outgoingTransitions xmi:id="_R4qNZVsFEe27NrGh0QYi0g" target="_R4qNZlsFEe27NrGh0QYi0g"/>
@@ -11,11 +11,11 @@
             <outgoingTransitions xmi:id="_ZReOGVsFEe27NrGh0QYi0g" specification="" target="_ZRe1EFsFEe27NrGh0QYi0g"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_ZRe1EFsFEe27NrGh0QYi0g" specification="entry /&#xA;hour = 0" name="NoPowerConsumed" incomingTransitions="_ZReOGVsFEe27NrGh0QYi0g _ZRgqZlsFEe27NrGh0QYi0g">
-            <outgoingTransitions xmi:id="_ZRfcNFsFEe27NrGh0QYi0g" specification="on" target="_ZRgDMFsFEe27NrGh0QYi0g"/>
+            <outgoingTransitions xmi:id="_ZRfcNFsFEe27NrGh0QYi0g" specification="[device.isOn]" target="_ZRgDMFsFEe27NrGh0QYi0g"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_ZRgDMFsFEe27NrGh0QYi0g" specification="entry /&#xA;total = kilowatt * (hour / totalSeconds)" name="consuming_power" incomingTransitions="_ZRfcNFsFEe27NrGh0QYi0g _ZRgqXVsFEe27NrGh0QYi0g">
-            <outgoingTransitions xmi:id="_ZRgqXVsFEe27NrGh0QYi0g" specification="after 1s / hour++" target="_ZRgDMFsFEe27NrGh0QYi0g"/>
-            <outgoingTransitions xmi:id="_ZRgqZlsFEe27NrGh0QYi0g" specification="off" target="_ZRe1EFsFEe27NrGh0QYi0g"/>
+          <vertices xsi:type="sgraph:State" xmi:id="_ZRgDMFsFEe27NrGh0QYi0g" specification="entry /&#xA;kWh = kilowatt * hour;&#xA;totalPower = kWh * totalHour" name="consuming_power" incomingTransitions="_ZRfcNFsFEe27NrGh0QYi0g _ZRgqXVsFEe27NrGh0QYi0g">
+            <outgoingTransitions xmi:id="_ZRgqXVsFEe27NrGh0QYi0g" specification="after 1s / totalHour++" target="_ZRgDMFsFEe27NrGh0QYi0g"/>
+            <outgoingTransitions xmi:id="_ZRgqZlsFEe27NrGh0QYi0g" specification="[!device.isOn]" target="_ZRe1EFsFEe27NrGh0QYi0g"/>
           </vertices>
         </regions>
       </vertices>
@@ -154,7 +154,7 @@
     <edges xmi:id="_ZRifcFsFEe27NrGh0QYi0g" type="Transition" element="_ZRfcNFsFEe27NrGh0QYi0g" source="_ZReOAFsFEe27NrGh0QYi0g" target="_ZReODFsFEe27NrGh0QYi0g">
       <children xsi:type="notation:DecorationNode" xmi:id="_ZRifcVsFEe27NrGh0QYi0g" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_ZRifclsFEe27NrGh0QYi0g"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_ZRifc1sFEe27NrGh0QYi0g" x="-2" y="-9"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_ZRifc1sFEe27NrGh0QYi0g" x="-31" y="-39"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_ZRifdFsFEe27NrGh0QYi0g" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_ZRifdVsFEe27NrGh0QYi0g" fontName="Verdana"/>
@@ -175,7 +175,7 @@
     <edges xmi:id="_ZRifgVsFEe27NrGh0QYi0g" type="Transition" element="_ZRgqZlsFEe27NrGh0QYi0g" source="_ZReODFsFEe27NrGh0QYi0g" target="_ZReOAFsFEe27NrGh0QYi0g">
       <children xsi:type="notation:DecorationNode" xmi:id="_ZRifglsFEe27NrGh0QYi0g" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_ZRifg1sFEe27NrGh0QYi0g"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_ZRifhFsFEe27NrGh0QYi0g" x="4" y="11"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_ZRifhFsFEe27NrGh0QYi0g" x="-25" y="40"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_ZRifhVsFEe27NrGh0QYi0g" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_ZRifhlsFEe27NrGh0QYi0g" fontName="Verdana"/>

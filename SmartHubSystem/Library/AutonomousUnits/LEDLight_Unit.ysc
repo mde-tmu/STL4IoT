@@ -15,10 +15,10 @@
             <outgoingTransitions xmi:id="_Y248aXyaEe2ua6MSQyC-Ag" specification="" target="_Y26KcHyaEe2ua6MSQyC-Ag"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_Y26KcHyaEe2ua6MSQyC-Ag" name="Bulb_on_standby" incomingTransitions="_Y248aXyaEe2ua6MSQyC-Ag _Y27Yk3yaEe2ua6MSQyC-Ag">
-            <outgoingTransitions xmi:id="_Y26Kc3yaEe2ua6MSQyC-Ag" specification="every 500ns[Bulb.isOn]" target="_Y27YkHyaEe2ua6MSQyC-Ag"/>
+            <outgoingTransitions xmi:id="_Y26Kc3yaEe2ua6MSQyC-Ag" specification="every 500ms[Bulb.isOn]" target="_Y27YkHyaEe2ua6MSQyC-Ag"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_Y27YkHyaEe2ua6MSQyC-Ag" name="Bulb_on" incomingTransitions="_Y26Kc3yaEe2ua6MSQyC-Ag">
-            <outgoingTransitions xmi:id="_Y27Yk3yaEe2ua6MSQyC-Ag" specification="every 500ns [!Bulb.isOn]" target="_Y26KcHyaEe2ua6MSQyC-Ag"/>
+            <outgoingTransitions xmi:id="_Y27Yk3yaEe2ua6MSQyC-Ag" specification="every 500ms [!Bulb.isOn]" target="_Y26KcHyaEe2ua6MSQyC-Ag"/>
           </vertices>
         </regions>
       </vertices>
