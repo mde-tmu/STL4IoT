@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//Library/AtomicComponents/Actuator_Component.ysc=UTF-8
+encoding//Library/AtomicComponents/Controller_Component.ysc=UTF-8
+encoding//Library/AtomicComponents/DeviceTemp_Component.ysc=UTF-8
+encoding//Library/AtomicComponents/Network_Component.ysc=UTF-8
+encoding//Library/AtomicComponents/Power_Component.ysc=UTF-8
+encoding//Library/AtomicComponents/Sensor_Component.ysc=UTF-8
+encoding//Library/BaseSystemUnits/AirConditioner_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/Elevator_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/FireAlarm_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/LEDLight_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/Microwave_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/TV_Unit.ysc=UTF-8
+encoding//Library/BaseSystemUnits/TrafficLight_Unit.ysc=UTF-8
+encoding//Library/HubTemplate.ysc=UTF-8
+encoding//Library/Managers/Active_Systems_Manager.ysc=UTF-8
