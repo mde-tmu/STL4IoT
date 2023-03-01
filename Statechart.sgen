@@ -1,0 +1,15 @@
+GeneratorModel for create::java {
+
+	const PROJECT : string = "SmartHubSystem"
+
+	const FOLDER : string = "src-gen"
+
+	statechart NewSystem_Sample {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+			libraryTargetFolder = "src"
+		}
+	}
+}
