@@ -16,7 +16,7 @@ Professor Sadaf Mustafiz M.Sc. Ph.D.
 
 John-Clyde Rempillo B.Sc.
 ## Main Github Webpage
-[Click here to visit the main webpage](https://clyderemp.github.io/iot-statechart-template-webpage/index.html)
+[Click here to visit the main webpage](https://mde-tmu.github.io/iot-statechart-template-webpage/index.html)
 
 ## Installation
 
