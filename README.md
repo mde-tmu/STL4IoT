@@ -24,8 +24,6 @@ John-Clyde Rempillo B.Sc.
 2. You can now clone the repo from the github page
 ```bash
 cd 'your-directory'
-git init 
-git commit -m 'Cloning iot-statechart-template'
 git clone https://github.com/mde-tmu/iot-sc-template-library.git
 ```
 
