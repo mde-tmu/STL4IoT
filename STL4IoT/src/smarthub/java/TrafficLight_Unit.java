@@ -9,7 +9,7 @@ import com.yakindu.core.rx.Observable;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
+public class TrafficLight_Unit implements ITimed, IEventDriven {
 	public static class Device {
 		private TrafficLight_Unit parent;
 		
@@ -291,8 +291,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart TrafficLight_Unit */
@@ -303,8 +302,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart TrafficLight_Unit */
@@ -404,8 +402,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1036,8 +1033,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _TrafficLight_Unit__Off_react(long transitioned_before) {
@@ -1051,12 +1047,12 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_react(long transitioned_before) {
@@ -1070,12 +1066,12 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_TrafficLight_Color_Green_react(long transitioned_before) {
@@ -1088,8 +1084,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_TrafficLight_Color_Red_react(long transitioned_before) {
@@ -1102,8 +1097,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_TrafficLight_Color_Yellow_react(long transitioned_before) {
@@ -1116,8 +1110,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_PedestrianLight_Color_StopHand_react(long transitioned_before) {
@@ -1130,8 +1123,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_PedestrianLight_Color_BlinkingWalkingMan_react(long transitioned_before) {
@@ -1144,8 +1136,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_PedestrianLight_Color_WalkingMan_react(long transitioned_before) {
@@ -1159,8 +1150,7 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_Timer__timer_running__react(long transitioned_before) {
@@ -1174,12 +1164,12 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _TrafficLight_Unit__On_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_Timer__timer_running___Timer_Countdown___green_period__react(long transitioned_before) {
@@ -1200,15 +1190,15 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[1]) {
 				timer.counter--;
 			}
 			transitioned_after = _TrafficLight_Unit__On_Timer__timer_running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_Timer__timer_running___Timer_Countdown___red_period__react(long transitioned_before) {
@@ -1222,15 +1212,15 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[2]) {
 				timer.counter--;
 			}
 			transitioned_after = _TrafficLight_Unit__On_Timer__timer_running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_Timer__timer_running___Timer_Countdown___yellow_period__react(long transitioned_before) {
@@ -1244,21 +1234,20 @@ public class TrafficLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[3]) {
 				timer.counter--;
 			}
 			transitioned_after = _TrafficLight_Unit__On_Timer__timer_running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TrafficLight_Unit__On_Timer__timer_running___Timer_Countdown___final__react(long transitioned_before) {
 		/* The reactions of state null. */
-		return _TrafficLight_Unit__On_Timer__timer_running__react(transitioned_before)
-		;
+		return _TrafficLight_Unit__On_Timer__timer_running__react(transitioned_before);
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Network_Component implements IStatemachine, ITimed, IEventDriven {
+public class Network_Component implements ITimed, IEventDriven {
 	public enum State {
 		_NETWORK_COMPONENT___NETWORK_COMPONENT_WORKING_,
 		_NETWORK_COMPONENT___NETWORK_COMPONENT_WORKING___NETWORK_CONNECTION__CHECKINGFORNETWORKCONNECTION,
@@ -63,8 +63,7 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Network_Component */
@@ -75,8 +74,7 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Network_Component */
@@ -134,8 +132,7 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -558,8 +555,7 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Network_Component___Network_Component_Working__react(long transitioned_before) {
@@ -573,21 +569,23 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection_react(long transitioned_before) {
 		/* The reactions of state checkingForNetworkConnection. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _Network_Component___Network_Component_Working__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _Network_Component___Network_Component_Working__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer_react(long transitioned_before) {
@@ -601,24 +599,26 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer__Server_Connection__success_react(long transitioned_before) {
 		/* The reactions of state success. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		if (timeEvents[0]) {
-			timeout_counter--;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			if (timeEvents[0]) {
+				timeout_counter--;
+			}
+			transitioned_after = _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer_react(transitioned_before);
 		}
-		transitioned_after = _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer_react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer__Server_Connection__failure_react(long transitioned_before) {
@@ -634,22 +634,22 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[2]) {
 				timeout_counter--;
 			}
 			transitioned_after = _Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___Network_Component_Working___Network_Connection__networkTimeout_react(long transitioned_before) {
 		/* The reactions of state networkTimeout. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (((timeEvents[3]) && (!getConnection()))) {
+			if (((timeEvents[3]) && (!(getConnection())))) {
 				exitSequence__Network_Component___Network_Component_Working___Network_Connection__networkTimeout();
 				timeEvents[3] = false;
 				enterSequence__Network_Component___Network_Component_Working___Network_Connection__checkingForNetworkConnection__CheckingForConnectionUpdates__connectingToServer_default();
@@ -657,12 +657,12 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Network_Component___Network_Component_Working__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Network_Component___off__react(long transitioned_before) {
@@ -676,12 +676,12 @@ public class Network_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

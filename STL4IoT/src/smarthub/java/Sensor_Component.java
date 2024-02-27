@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
+public class Sensor_Component implements ITimed, IEventDriven {
 	public enum State {
 		_SENSOR_COMPONENT___SENSOR_MONITORING_,
 		_SENSOR_COMPONENT___SENSOR_MONITORING___SENSING__UNDER_THRESHOLD,
@@ -64,8 +64,7 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Sensor_Component */
@@ -76,8 +75,7 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Sensor_Component */
@@ -133,8 +131,7 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -508,8 +505,7 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Sensor_Component___Sensor_Monitoring__react(long transitioned_before) {
@@ -523,15 +519,15 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[0]) {
 				setSensorData(environmentData);
 			}
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Sensor_Component___Sensor_Monitoring___Sensing__Under_Threshold_react(long transitioned_before) {
@@ -554,12 +550,12 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Sensor_Component___Sensor_Monitoring__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Sensor_Component___Sensor_Monitoring___Sensing__Threshold_Reached_react(long transitioned_before) {
@@ -572,7 +568,7 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 				_Sensor_Component___Sensor_Monitoring__react(0l);
 				transitioned_after = 0l;
 			} else {
-				if (((timeEvents[2]) && (!getActivity()))) {
+				if (((timeEvents[2]) && (!(getActivity())))) {
 					exitSequence__Sensor_Component___Sensor_Monitoring___Sensing__Threshold_Reached();
 					raiseNoActivitySensed();
 					timeEvents[2] = false;
@@ -582,12 +578,12 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Sensor_Component___Sensor_Monitoring__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Sensor_Component___off__react(long transitioned_before) {
@@ -601,12 +597,12 @@ public class Sensor_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

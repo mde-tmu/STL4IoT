@@ -15,7 +15,7 @@ import smarthub.java.Power_Component;
 import smarthub.java.Sensor_Component;
 import smarthub.java.TV_Unit;
 
-public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
+public class SmartTVSystem implements ITimed, IEventDriven {
 	public static class System {
 		private SmartTVSystem parent;
 		
@@ -262,8 +262,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart SmartTVSystem */
@@ -274,8 +273,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart SmartTVSystem */
@@ -409,8 +407,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -725,7 +722,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 	/* Entry action for state '<Device_Functioning>'. */
 	private void entryAction__SmartTVSystem__SmartTVSystem_ActuatorComponent__Device_Functioning_() {
 		/* Entry action for state '<Device_Functioning>'. */
-		if (!getActuator().device().getActuated()) {
+		if (!(getActuator().device().getActuated())) {
 			setMessage("Smart devices main function is here");
 		}
 	}
@@ -1498,17 +1495,15 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_react(long transitioned_before) {
 		/* The reactions of state SmartTVSystem. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_SystemStatus_off_react(long transitioned_before) {
@@ -1521,8 +1516,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_SystemStatus_on_react(long transitioned_before) {
@@ -1542,8 +1536,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ActuatorComponent__Actuator_Updates__react(long transitioned_before) {
@@ -1569,8 +1562,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ActuatorComponent__Device_Functioning__react(long transitioned_before) {
@@ -1590,8 +1582,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ActuatorComponent_off_react(long transitioned_before) {
@@ -1604,8 +1595,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ControllerComponent__Initialize_Controller_Component__react(long transitioned_before) {
@@ -1618,8 +1608,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ControllerComponent__Initialize_Controller_Component__updating__Controller_Updates__react(long transitioned_before) {
@@ -1634,12 +1623,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_ControllerComponent__Initialize_Controller_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_ControllerComponent_off_react(long transitioned_before) {
@@ -1652,8 +1641,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_SensorComponent__Initialize_Sensor_Component__react(long transitioned_before) {
@@ -1666,8 +1654,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_SensorComponent__Initialize_Sensor_Component__updating__Sensor_Updates__react(long transitioned_before) {
@@ -1682,12 +1669,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_SensorComponent__Initialize_Sensor_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_SensorComponent_off_react(long transitioned_before) {
@@ -1700,8 +1687,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_NetworkComponent__Initialize_WiFi_Component__react(long transitioned_before) {
@@ -1714,8 +1700,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_NetworkComponent__Initialize_WiFi_Component__updating__WiFi_Updates__react(long transitioned_before) {
@@ -1730,12 +1715,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_NetworkComponent__Initialize_WiFi_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_NetworkComponent_off_react(long transitioned_before) {
@@ -1748,8 +1733,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_PowerCalculatorComponent__Initialize_Power_Component__react(long transitioned_before) {
@@ -1762,8 +1746,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_PowerCalculatorComponent__Initialize_Power_Component__updating__Power_Updates__react(long transitioned_before) {
@@ -1778,12 +1761,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_PowerCalculatorComponent__Initialize_Power_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_PowerCalculatorComponent_off_react(long transitioned_before) {
@@ -1796,8 +1779,7 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(long transitioned_before) {
@@ -1811,12 +1793,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__updating__Temperature_Updates__react(long transitioned_before) {
@@ -1831,12 +1813,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartTVSystem__SmartTVSystem_trackingDeviceTemperature_off_react(long transitioned_before) {
@@ -1850,12 +1832,12 @@ public class SmartTVSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartTVSystem__SmartTVSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

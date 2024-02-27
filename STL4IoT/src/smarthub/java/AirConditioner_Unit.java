@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven {
+public class AirConditioner_Unit implements ITimed, IEventDriven {
 	public static class Metric {
 		private AirConditioner_Unit parent;
 		
@@ -254,8 +254,7 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart AirConditioner_Unit */
@@ -275,8 +274,7 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart AirConditioner_Unit */
@@ -369,8 +367,7 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -922,14 +919,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _AirConditioner__Off_react(long transitioned_before) {
 		/* The reactions of state Off. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (toggle) {
 					exitSequence__AirConditioner__Off();
@@ -938,19 +934,19 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 					transitioned_after = 0l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_react(long transitioned_before) {
 		/* The reactions of state MonitorRoomTemp. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (toggle) {
 					exitSequence__AirConditioner__MonitorRoomTemp();
@@ -959,19 +955,19 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 					transitioned_after = 2l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_MonitoringTemp_Maintaining_react(long transitioned_before) {
 		/* The reactions of state Maintaining. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (getTempChange()!=0l) {
 					exitSequence__AirConditioner__MonitorRoomTemp_MonitoringTemp_Maintaining();
@@ -987,14 +983,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(long transitioned_before) {
 		/* The reactions of state RoomTempChanging. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (((timeEvents[1]) && (getTempChange()==0l))) {
 					exitSequence__AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging();
@@ -1011,25 +1006,26 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_TemperatureChange_HeatingUp_react(long transitioned_before) {
 		/* The reactions of state HeatingUp. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
-			/* If no transition was taken then execute local reactions */
-			transitioned_after = _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(transitioned_before);
+		if (!(getDoCompletion())) {
+			/* If no transition was taken */
+			if (transitioned_after==transitioned_before) {
+				/* then execute local reactions. */
+				transitioned_after = _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(transitioned_before);
+			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_TemperatureChange_DetermineTempChange_react(long transitioned_before) {
 		/* The reactions of state DetermineTempChange. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (getTempChange()>0l) {
 					exitSequence__AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_TemperatureChange_DetermineTempChange();
@@ -1045,30 +1041,32 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 					}
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_TemperatureChange_CoolDown_react(long transitioned_before) {
 		/* The reactions of state CoolDown. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
-			/* If no transition was taken then execute local reactions */
-			transitioned_after = _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(transitioned_before);
+		if (!(getDoCompletion())) {
+			/* If no transition was taken */
+			if (transitioned_after==transitioned_before) {
+				/* then execute local reactions. */
+				transitioned_after = _AirConditioner__MonitorRoomTemp_MonitoringTemp_RoomTempChanging_react(transitioned_before);
+			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_ConvertingTemp_InitializeConverter_react(long transitioned_before) {
 		/* The reactions of state InitializeConverter. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (metric.convertToFahrenheit) {
 					exitSequence__AirConditioner__MonitorRoomTemp_ConvertingTemp_InitializeConverter();
@@ -1087,14 +1085,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_ChangingTemp_Monitoring_react(long transitioned_before) {
 		/* The reactions of state Monitoring. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<2l) {
 				if (temp_up) {
 					exitSequence__AirConditioner__MonitorRoomTemp_ChangingTemp_Monitoring();
@@ -1110,13 +1107,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 					}
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _AirConditioner__MonitorRoomTemp_react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_ChangingTemp_IncreaseTemp_react(long transitioned_before) {
@@ -1131,11 +1128,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 			stateConfVectorPosition = 2;
 			_AirConditioner__MonitorRoomTemp_react(0l);
 		} else {
-			/* If no transition was taken then execute local reactions */
-			transitioned_after = _AirConditioner__MonitorRoomTemp_react(transitioned_before);
+			/* If no transition was taken */
+			if (transitioned_after==transitioned_before) {
+				/* then execute local reactions. */
+				transitioned_after = _AirConditioner__MonitorRoomTemp_react(transitioned_before);
+			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _AirConditioner__MonitorRoomTemp_ChangingTemp_DecreaseTemp_react(long transitioned_before) {
@@ -1150,11 +1149,13 @@ public class AirConditioner_Unit implements IStatemachine, ITimed, IEventDriven 
 			stateConfVectorPosition = 2;
 			_AirConditioner__MonitorRoomTemp_react(0l);
 		} else {
-			/* If no transition was taken then execute local reactions */
-			transitioned_after = _AirConditioner__MonitorRoomTemp_react(transitioned_before);
+			/* If no transition was taken */
+			if (transitioned_after==transitioned_before) {
+				/* then execute local reactions. */
+				transitioned_after = _AirConditioner__MonitorRoomTemp_react(transitioned_before);
+			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

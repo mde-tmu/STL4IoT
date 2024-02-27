@@ -12,7 +12,7 @@ import smarthub.java.Controller_Component;
 import smarthub.java.Power_Component;
 import smarthub.java.Ultrasonic_Sensor;
 
-public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventDriven {
+public class Ultrasonic_MotionDetector implements ITimed, IEventDriven {
 	public static class Status {
 		private Ultrasonic_MotionDetector parent;
 		
@@ -326,8 +326,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Ultrasonic_MotionDetector */
@@ -338,8 +337,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Ultrasonic_MotionDetector */
@@ -438,8 +436,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1213,8 +1210,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__react(long transitioned_before) {
@@ -1228,8 +1224,9 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[0]) {
 				oscillator.setTransducing(sensor.transmitter().getSending());
 				oscillator.setReceiving(sensor.receiver().getEcho());
@@ -1239,8 +1236,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 			}
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Sensor_Transmitting_react(long transitioned_before) {
@@ -1254,8 +1250,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Sensor_Receiving_react(long transitioned_before) {
@@ -1269,8 +1264,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Comparator_Reading_Sensor_Data_react(long transitioned_before) {
@@ -1284,8 +1278,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Comparator_Reading_Sensor_Data_Processing_Circuit_Changed_react(long transitioned_before) {
@@ -1300,12 +1293,12 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = ultrasonic_MotionDetector__Detecting__Comparator_Reading_Sensor_Data_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Comparator_Reading_Sensor_Data_Processing_Comparing_react(long transitioned_before) {
@@ -1320,12 +1313,12 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = ultrasonic_MotionDetector__Detecting__Comparator_Reading_Sensor_Data_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Actuator_OnStandby_react(long transitioned_before) {
@@ -1345,8 +1338,7 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Actuator_Actuate_Trigger_react(long transitioned_before) {
@@ -1359,17 +1351,18 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Power_PowerSupplyStatus_react(long transitioned_before) {
 		/* The reactions of state PowerSupplyStatus. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = ultrasonic_MotionDetector__Detecting__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = ultrasonic_MotionDetector__Detecting__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Power_PowerSupplyStatus_Status_ConsumingMinimum_react(long transitioned_before) {
@@ -1383,12 +1376,12 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = ultrasonic_MotionDetector__Detecting__Power_PowerSupplyStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__Detecting__Power_PowerSupplyStatus_Status_CircuitTrigger_react(long transitioned_before) {
@@ -1403,12 +1396,12 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = ultrasonic_MotionDetector__Detecting__Power_PowerSupplyStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long ultrasonic_MotionDetector__off__react(long transitioned_before) {
@@ -1422,12 +1415,12 @@ public class Ultrasonic_MotionDetector implements IStatemachine, ITimed, IEventD
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

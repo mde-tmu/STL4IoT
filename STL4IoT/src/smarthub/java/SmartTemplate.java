@@ -14,7 +14,7 @@ import smarthub.java.Network_Component;
 import smarthub.java.Power_Component;
 import smarthub.java.Sensor_Component;
 
-public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
+public class SmartTemplate implements ITimed, IEventDriven {
 	public static class System {
 		private SmartTemplate parent;
 		
@@ -236,8 +236,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart SmartTemplate */
@@ -248,8 +247,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart SmartTemplate */
@@ -381,8 +379,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1460,17 +1457,15 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _IoT_Template__IoT_Template_react(long transitioned_before) {
 		/* The reactions of state IoT_Template. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_DeviceSwitchStatus_off_react(long transitioned_before) {
@@ -1483,8 +1478,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_DeviceSwitchStatus_on_react(long transitioned_before) {
@@ -1504,8 +1498,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ActuatorComponent__Actuator_onStandby__react(long transitioned_before) {
@@ -1531,15 +1524,14 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ActuatorComponent__Device_Actuated__react(long transitioned_before) {
 		/* The reactions of state <Device_Actuated>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<1l) {
-			if (!getActuator().getIsTriggered()) {
+			if (!(getActuator().getIsTriggered())) {
 				exitSequence__IoT_Template__IoT_Template_ActuatorComponent__Device_Actuated_();
 				enterSequence__IoT_Template__IoT_Template_ActuatorComponent__Actuator_onStandby__default();
 				transitioned_after = 1l;
@@ -1551,8 +1543,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ActuatorComponent_off_react(long transitioned_before) {
@@ -1565,8 +1556,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ControllerComponent__Controller_Component_isON__react(long transitioned_before) {
@@ -1579,8 +1569,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ControllerComponent__Controller_Component_isON___Controller_Receiving_and_Sending_Updates___Controller_Component__react(long transitioned_before) {
@@ -1595,12 +1584,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_ControllerComponent__Controller_Component_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_ControllerComponent_off_react(long transitioned_before) {
@@ -1613,8 +1602,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_SensorComponent__Sensor_Component_isON__react(long transitioned_before) {
@@ -1627,8 +1615,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(long transitioned_before) {
@@ -1643,12 +1630,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_SensorComponent__Sensor_Component_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_SensorComponent_off_react(long transitioned_before) {
@@ -1661,8 +1648,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_NetworkComponent__Initialize_Network_Component__react(long transitioned_before) {
@@ -1675,8 +1661,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_NetworkComponent__Initialize_Network_Component___Receiving_Network_Connection_Updates___Network_Component__react(long transitioned_before) {
@@ -1691,12 +1676,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_NetworkComponent__Initialize_Network_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_NetworkComponent_off_react(long transitioned_before) {
@@ -1709,8 +1694,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_PowerCalculatorComponent__Initialize_Power_Component__react(long transitioned_before) {
@@ -1723,8 +1707,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_PowerCalculatorComponent__Initialize_Power_Component___Receiving_Updates_From_Power_Component___Power_Consumption_Updates__react(long transitioned_before) {
@@ -1739,12 +1722,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_PowerCalculatorComponent__Initialize_Power_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_PowerCalculatorComponent_off_react(long transitioned_before) {
@@ -1757,8 +1740,7 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(long transitioned_before) {
@@ -1772,12 +1754,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_trackingDeviceTemperature__Initialize_DeviceTemp_Component___Receiving_Updates_from_DeviceTemp_Component___Temperature_Updates__react(long transitioned_before) {
@@ -1792,12 +1774,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _IoT_Template__IoT_Template_trackingDeviceTemperature_off_react(long transitioned_before) {
@@ -1811,12 +1793,12 @@ public class SmartTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _IoT_Template__IoT_Template_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

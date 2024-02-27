@@ -15,7 +15,7 @@ import smarthub.java.Network_Component;
 import smarthub.java.Power_Component;
 import smarthub.java.Sensor_Component;
 
-public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
+public class SmartFireSystem implements ITimed, IEventDriven {
 	public static class System {
 		private SmartFireSystem parent;
 		
@@ -433,8 +433,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart SmartFireSystem */
@@ -445,8 +444,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart SmartFireSystem */
@@ -591,8 +589,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1909,17 +1906,15 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_react(long transitioned_before) {
 		/* The reactions of state SmartFireSystem. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_DeviceStatus_off_react(long transitioned_before) {
@@ -1932,8 +1927,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_DeviceStatus_on_react(long transitioned_before) {
@@ -1953,8 +1947,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ActuatorComponent__Actuator_OnStandby__react(long transitioned_before) {
@@ -1980,15 +1973,14 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ActuatorComponent__Device_Actuated__react(long transitioned_before) {
 		/* The reactions of state <Device_Actuated>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<1l) {
-			if (!getActuator().getIsTriggered()) {
+			if (!(getActuator().getIsTriggered())) {
 				exitSequence__SmartFiresystem__SmartFireSystem_ActuatorComponent__Device_Actuated_();
 				enterSequence__SmartFiresystem__SmartFireSystem_ActuatorComponent__Actuator_OnStandby__default();
 				transitioned_after = 1l;
@@ -2000,8 +1992,9 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[2]) {
 				fireAlarm.sensors().setTriggerSignal_received(actuator.getIsTriggered());
 				fireAlarm.sensors().setSmoke_presence(smokeSensorOutput.activity);
@@ -2009,8 +2002,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				fireAlarm.sensors().setHeat_presence(heatSensorOutput.activity);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ActuatorComponent__Actuator_off__react(long transitioned_before) {
@@ -2023,8 +2015,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ControllerComponent__Controller_Component_isON__react(long transitioned_before) {
@@ -2037,8 +2028,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ControllerComponent__Controller_Component_isON___Controller_Receiving_and_Sending_Updates___Controller_Component__react(long transitioned_before) {
@@ -2053,12 +2043,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_ControllerComponent__Controller_Component_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_ControllerComponent_off_react(long transitioned_before) {
@@ -2071,8 +2061,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON__react(long transitioned_before) {
@@ -2085,15 +2074,14 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(long transitioned_before) {
 		/* The reactions of state <Sensor_Component>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<3l) {
-			if (((timeEvents[4]) && (!sensorOutput.getActivity()))) {
+			if (((timeEvents[4]) && (!(sensorOutput.getActivity())))) {
 				exitSequence__SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component_();
 				timeEvents[4] = false;
 				enterSequence__SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__default();
@@ -2108,45 +2096,50 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component___Sensor_Detected_Activity__CarbonDetected_react(long transitioned_before) {
 		/* The reactions of state CarbonDetected. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component___Sensor_Detected_Activity__SmokeDetected_react(long transitioned_before) {
 		/* The reactions of state SmokeDetected. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component___Sensor_Detected_Activity__HeatDetected_react(long transitioned_before) {
 		/* The reactions of state HeatDetected. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component___Sensor_Detected_Activity___final__react(long transitioned_before) {
 		/* The reactions of state null. */
-		return _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before)
-		;
+		return _SmartFiresystem__SmartFireSystem_SensorComponent__Sensor_Component_isON___Sensor_Monitoring___Sensor_Component__react(transitioned_before);
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_SensorComponent_off_react(long transitioned_before) {
@@ -2159,8 +2152,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_NetworkComponent__Initialize_Network_Component__react(long transitioned_before) {
@@ -2173,8 +2165,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_NetworkComponent__Initialize_Network_Component___Receiving_Network_Connection_Updates___Network_Connection_Updates__react(long transitioned_before) {
@@ -2189,12 +2180,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_NetworkComponent__Initialize_Network_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_NetworkComponent_off_react(long transitioned_before) {
@@ -2207,8 +2198,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_PowerCalculatorComponent__Initialize_Power_Component__react(long transitioned_before) {
@@ -2221,8 +2211,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_PowerCalculatorComponent__Initialize_Power_Component___Receiving_Updates_From_Power_Component___Power_Consumption_Updates__react(long transitioned_before) {
@@ -2237,12 +2226,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_PowerCalculatorComponent__Initialize_Power_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_PowerCalculatorComponent_off_react(long transitioned_before) {
@@ -2255,8 +2244,7 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_DeviceTemperatureComponent__Initialize_DeviceTemp_Component__react(long transitioned_before) {
@@ -2270,12 +2258,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_DeviceTemperatureComponent__Initialize_DeviceTemp_Component___Receiving_Updates_from_DeviceTemp_Component___Temperature_Updates__react(long transitioned_before) {
@@ -2290,12 +2278,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_DeviceTemperatureComponent__Initialize_DeviceTemp_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartFiresystem__SmartFireSystem_DeviceTemperatureComponent_off_react(long transitioned_before) {
@@ -2309,12 +2297,12 @@ public class SmartFireSystem implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartFiresystem__SmartFireSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

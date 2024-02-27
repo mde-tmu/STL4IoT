@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
+public class FireAlarm_Unit implements ITimed, IEventDriven {
 	public static class Timer {
 		private FireAlarm_Unit parent;
 		
@@ -599,8 +599,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart FireAlarm_Unit */
@@ -611,8 +610,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart FireAlarm_Unit */
@@ -746,8 +744,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1703,17 +1700,15 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__react(long transitioned_before) {
 		/* The reactions of state <Fire_Alarm_Running>. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Alarm_Switch_Alarm_Off_react(long transitioned_before) {
@@ -1726,8 +1721,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Alarm_Switch_Alarm_On_react(long transitioned_before) {
@@ -1740,8 +1734,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Safe_react(long transitioned_before) {
@@ -1760,8 +1753,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Warning_react(long transitioned_before) {
@@ -1778,7 +1770,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 					enterSequence__FireAlarm_Unit___Fire_Alarm_Running__Status_Danger_default();
 					transitioned_after = 1l;
 				} else {
-					if (!sensors.getTriggerSignal_received()) {
+					if (!(sensors.getTriggerSignal_received())) {
 						exitSequence__FireAlarm_Unit___Fire_Alarm_Running__Status_Warning();
 						enterSequence__FireAlarm_Unit___Fire_Alarm_Running__Status_Safe_default();
 						transitioned_after = 1l;
@@ -1786,8 +1778,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Warning_Level_initial_warning_react(long transitioned_before) {
@@ -1801,12 +1792,12 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Status_Warning_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Warning_Level_final_warning_react(long transitioned_before) {
@@ -1819,12 +1810,12 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Status_Warning_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Danger_react(long transitioned_before) {
@@ -1837,17 +1828,18 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Status_Danger__911_activated___911_emergency_Activated_react(long transitioned_before) {
 		/* The reactions of state 911_emergency_Activated. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Status_Danger_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Status_Danger_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Triggered__react(long transitioned_before) {
@@ -1860,8 +1852,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Triggered__smokeSensor__Monitoring_Smoke_Level__react(long transitioned_before) {
@@ -1875,15 +1866,15 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (((timeEvents[0]) && (sensors.getSmoke_presence()))) {
 				sensors.setSmoke_value(sensors.getSmoke_value() + (sensors.smoke_increment));
 				message.setSensor("Smoke Presence Detected");
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Triggered__carbonSensor__Monitoring_Carbon_Level__react(long transitioned_before) {
@@ -1897,15 +1888,15 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (((timeEvents[1]) && (sensors.getCarbon_presence()))) {
 				sensors.setCarbon_value(sensors.getCarbon_value() + (sensors.carbon_increment));
 				message.setSensor("Carbon Presence Detected");
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Triggered__heatSensor__Monitoring_Heat_Level__react(long transitioned_before) {
@@ -1919,16 +1910,16 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (((timeEvents[2]) && (sensors.getHeat_presence()))) {
 				sensors.setHeat_value(sensors.getHeat_value() + (sensors.heat_increment));
 				message.setSensor("Heat Presence Detected");
 			}
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Triggered__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__react(long transitioned_before) {
@@ -1941,8 +1932,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__warning_before_sounding_SensorWarning_react(long transitioned_before) {
@@ -1956,21 +1946,23 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__warning_before_sounding_SoundAlarm_react(long transitioned_before) {
 		/* The reactions of state SoundAlarm. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Threshold_Reached__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Monitoring_Sensor_Level__Sensor_Value_Monitoring__react(long transitioned_before) {
@@ -1990,8 +1982,7 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__disabled__react(long transitioned_before) {
@@ -2005,12 +1996,12 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(long transitioned_before) {
@@ -2032,12 +2023,12 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__r1__final_warning__react(long transitioned_before) {
@@ -2051,36 +2042,40 @@ public class FireAlarm_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[4]) {
 				timer.counter--;
 			}
 			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__r1__initial_warning__react(long transitioned_before) {
 		/* The reactions of state <initial_warning>. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		if (timeEvents[5]) {
-			timer.counter--;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			if (timeEvents[5]) {
+				timer.counter--;
+			}
+			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(transitioned_before);
 		}
-		transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__r1__final_warning_ended_react(long transitioned_before) {
 		/* The reactions of state <final_warning_ended. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _FireAlarm_Unit___Fire_Alarm_Running__Timer_Status__timer_running__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

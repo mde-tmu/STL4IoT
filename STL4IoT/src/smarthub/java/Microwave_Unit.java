@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
+public class Microwave_Unit implements ITimed, IEventDriven {
 	public static class Device {
 		private Microwave_Unit parent;
 		
@@ -266,8 +266,7 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Microwave_Unit */
@@ -287,8 +286,7 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Microwave_Unit */
@@ -368,8 +366,7 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -847,14 +844,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Microwave_Unit___off__react(long transitioned_before) {
 		/* The reactions of state <off>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (device.on) {
 					exitSequence__Microwave_Unit___off_();
@@ -863,19 +859,19 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 0l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on__react(long transitioned_before) {
 		/* The reactions of state <on>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (device.off) {
 					exitSequence__Microwave_Unit___on_();
@@ -884,19 +880,19 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 1l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on___Microwave_isWorking__idle_standby_react(long transitioned_before) {
 		/* The reactions of state idle/standby. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (((device.start) && (door.getClosed()))) {
 					exitSequence__Microwave_Unit___on___Microwave_isWorking__idle_standby();
@@ -918,14 +914,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on___Microwave_isWorking__startTimer_react(long transitioned_before) {
 		/* The reactions of state startTimer. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (device.pause) {
 					exitSequence__Microwave_Unit___on___Microwave_isWorking__startTimer();
@@ -934,14 +929,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on___Microwave_isWorking__startTimer__Starting_Timer__pause_react(long transitioned_before) {
 		/* The reactions of state pause. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (device.getTimer()>0l) {
 					exitSequence__Microwave_Unit___on___Microwave_isWorking__startTimer__Starting_Timer__pause();
@@ -959,19 +953,19 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					}
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _Microwave_Unit___on___Microwave_isWorking__startTimer_react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on___Microwave_isWorking__startTimer__Starting_Timer__start_react(long transitioned_before) {
 		/* The reactions of state start. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (device.getTimer()<=0l) {
 					exitSequence__Microwave_Unit___on___Microwave_isWorking__startTimer__Starting_Timer__start();
@@ -988,7 +982,7 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 						_Microwave_Unit___on___Microwave_isWorking__startTimer_react(0l);
 						transitioned_after = 0l;
 					} else {
-						if (((timeEvents[2]) && (!getFood_inside_sensed()))) {
+						if (((timeEvents[2]) && (!(getFood_inside_sensed())))) {
 							exitSequence__Microwave_Unit___on___Microwave_isWorking__startTimer__Starting_Timer__start();
 							device.raisePause();
 							setMessage("No food inside !");
@@ -999,13 +993,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					}
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _Microwave_Unit___on___Microwave_isWorking__startTimer_react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on___Microwave_isWorking__addTimer_react(long transitioned_before) {
@@ -1020,14 +1014,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 			stateVector[0] = State._MICROWAVE_UNIT___ON___MICROWAVE_ISWORKING__IDLE_STANDBY;
 			stateConfVectorPosition = 0;
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on__doorStatus_DoorClosed_react(long transitioned_before) {
 		/* The reactions of state DoorClosed. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (door.open) {
 					exitSequence__Microwave_Unit___on__doorStatus_DoorClosed();
@@ -1036,19 +1029,19 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 1l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _Microwave_Unit___on__react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Microwave_Unit___on__doorStatus_DoorOpened_react(long transitioned_before) {
 		/* The reactions of state DoorOpened. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (door.close) {
 					exitSequence__Microwave_Unit___on__doorStatus_DoorOpened();
@@ -1057,13 +1050,13 @@ public class Microwave_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 1l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = _Microwave_Unit___on__react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

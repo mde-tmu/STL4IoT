@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
+public class Actuator_Component implements ITimed, IEventDriven {
 	public static class Power {
 		private Actuator_Component parent;
 		
@@ -126,8 +126,7 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Actuator_Component */
@@ -138,8 +137,7 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Actuator_Component */
@@ -195,8 +193,7 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -505,8 +502,7 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Actuator_Component___Standby__react(long transitioned_before) {
@@ -535,19 +531,19 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Actuator_Component___ActuatorReceivingSignal__react(long transitioned_before) {
 		/* The reactions of state <ActuatorReceivingSignal>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (!getIsTriggered()) {
+			if (!(getIsTriggered())) {
 				exitSequence__Actuator_Component___ActuatorReceivingSignal_();
 				enterSequence__Actuator_Component___Standby__default();
 				react(0l);
@@ -562,49 +558,53 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Actuating_Device__react(long transitioned_before) {
 		/* The reactions of state <Actuating_Device>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (!device.getActuated()) {
+			if (!(device.getActuated())) {
 				exitSequence__Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Actuating_Device_();
 				enterSequence__Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Error_Handler__default();
 				_Actuator_Component___ActuatorReceivingSignal__react(0l);
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Actuator_Component___ActuatorReceivingSignal__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Actuating_Device___Actuator_actuates_device___DeviceFunctioning__react(long transitioned_before) {
 		/* The reactions of state <DeviceFunctioning>. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Actuating_Device__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Actuating_Device__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _Actuator_Component___ActuatorReceivingSignal___Actuator_Receives_actuatingSignal_From_Controller___Error_Handler__react(long transitioned_before) {
 		/* The reactions of state <Error_Handler>. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _Actuator_Component___ActuatorReceivingSignal__react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _Actuator_Component___ActuatorReceivingSignal__react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _Actuator_Component___off__react(long transitioned_before) {
@@ -618,12 +618,12 @@ public class Actuator_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

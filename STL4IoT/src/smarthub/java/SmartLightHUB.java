@@ -12,7 +12,7 @@ import smarthub.java.Hub_PowerManager;
 import smarthub.java.Network_Component;
 import smarthub.java.SmartLightSystem;
 
-public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
+public class SmartLightHUB implements ITimed, IEventDriven {
 	public static class HUB {
 		private SmartLightHUB parent;
 		
@@ -443,8 +443,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart SmartLightHUB */
@@ -455,8 +454,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart SmartLightHUB */
@@ -591,8 +589,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1668,8 +1665,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long smartLightHubSystem_1_0_HubOff_react(long transitioned_before) {
@@ -1683,12 +1679,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_react(long transitioned_before) {
@@ -1702,18 +1698,17 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_react(long transitioned_before) {
 		/* The reactions of state SmartLightHubSystemStatus. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_AllSystemsOFF_react(long transitioned_before) {
@@ -1727,12 +1722,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_react(long transitioned_before) {
@@ -1746,12 +1741,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_System1_LED_Light1_ON_react(long transitioned_before) {
@@ -1764,8 +1759,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_System1_LED_Light1_OFF_react(long transitioned_before) {
@@ -1778,8 +1772,7 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_System2_LED_Light2_ON_react(long transitioned_before) {
@@ -1793,12 +1786,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_System2_LED_Light2_OFF_react(long transitioned_before) {
@@ -1812,12 +1805,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_SmartHubStatusRegion_SmartLightHubSystemStatus_HubStatusRegion_System_Manager_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_PowerConsumptionCalculator_react(long transitioned_before) {
@@ -1837,15 +1830,14 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(long transitioned_before) {
 		/* The reactions of state IOT_EnergySaverManager. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<2l) {
-			if (!power.getThresholdReached()) {
+			if (!(power.getThresholdReached())) {
 				exitSequence_SmartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager();
 				enterSequence_SmartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_PowerConsumptionCalculator_default();
 				transitioned_after = 2l;
@@ -1858,32 +1850,34 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold_LED_Light1_react(long transitioned_before) {
 		/* The reactions of state LED_Light1. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold_LED_Light2_react(long transitioned_before) {
 		/* The reactions of state LED_Light2. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold__final__react(long transitioned_before) {
 		/* The reactions of state null. */
-		return smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before)
-		;
+		return smartLightHubSystem_1_0_SmartLightsHUB_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_NetworkRegion_No_Connection_react(long transitioned_before) {
@@ -1897,29 +1891,26 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_NetworkRegion_Connected_react(long transitioned_before) {
 		/* The reactions of state Connected. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<3l) {
-			if (((timeEvents[3]) && (!getWiFi().getConnection()))) {
+			if (((timeEvents[3]) && (!(getWiFi().getConnection())))) {
 				exitSequence_SmartLightHubSystem_1_0_SmartLightsHUB_NetworkRegion_Connected();
 				timeEvents[3] = false;
 				enterSequence_SmartLightHubSystem_1_0_SmartLightsHUB_NetworkRegion_No_Connection_default();
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light1Region_LED1_react(long transitioned_before) {
 		/* The reactions of state LED1. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light1Region_LED1_status_working_react(long transitioned_before) {
@@ -1933,12 +1924,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_Light1Region_LED1_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light1Region_LED1_status_error_react(long transitioned_before) {
@@ -1952,21 +1943,23 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_Light1Region_LED1_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light2Region_LED2_react(long transitioned_before) {
 		/* The reactions of state LED2. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light2Region_LED2_status_working_react(long transitioned_before) {
@@ -1980,12 +1973,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_Light2Region_LED2_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long smartLightHubSystem_1_0_SmartLightsHUB_Light2Region_LED2_status_error_react(long transitioned_before) {
@@ -1999,12 +1992,12 @@ public class SmartLightHUB implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = smartLightHubSystem_1_0_SmartLightsHUB_Light2Region_LED2_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

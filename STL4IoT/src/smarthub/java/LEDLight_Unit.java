@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
+public class LEDLight_Unit implements ITimed, IEventDriven {
 	public static class Device {
 		private LEDLight_Unit parent;
 		
@@ -183,8 +183,7 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart LEDLight_Unit */
@@ -195,8 +194,7 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart LEDLight_Unit */
@@ -251,8 +249,7 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -508,8 +505,7 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _LED_Light_Unit___Off__react(long transitioned_before) {
@@ -523,12 +519,12 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _LED_Light_Unit___On__react(long transitioned_before) {
@@ -542,12 +538,12 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _LED_Light_Unit___On___Bulb_Status__Bulb_on_standby_react(long transitioned_before) {
@@ -562,19 +558,19 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _LED_Light_Unit___On__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _LED_Light_Unit___On___Bulb_Status__Bulb_on_react(long transitioned_before) {
 		/* The reactions of state Bulb_on. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (((timeEvents[1]) && (!bulb.getIsOn()))) {
+			if (((timeEvents[1]) && (!(bulb.getIsOn())))) {
 				exitSequence__LED_Light_Unit___On___Bulb_Status__Bulb_on();
 				timeEvents[1] = false;
 				enterSequence__LED_Light_Unit___On___Bulb_Status__Bulb_on_standby_default();
@@ -582,12 +578,12 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _LED_Light_Unit___On__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _LED_Light_Unit___On___Bulb_Status__Bulb_on__Luminosity__Change_Luminosity_Level_react(long transitioned_before) {
@@ -610,12 +606,12 @@ public class LEDLight_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _LED_Light_Unit___On___Bulb_Status__Bulb_on_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

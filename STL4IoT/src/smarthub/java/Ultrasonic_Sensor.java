@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
+public class Ultrasonic_Sensor implements ITimed, IEventDriven {
 	public static class Status {
 		private Ultrasonic_Sensor parent;
 		
@@ -213,8 +213,7 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Ultrasonic_Sensor */
@@ -225,8 +224,7 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Ultrasonic_Sensor */
@@ -290,8 +288,7 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -723,8 +720,7 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Ultrasonic_Sensor___Sensor_Monitoring__react(long transitioned_before) {
@@ -738,15 +734,15 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[0]) {
 				setReceiverData(environmentData);
 			}
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Ultrasonic_Sensor___Sensor_Monitoring__UltrasonicTransducer_Transmitting_react(long transitioned_before) {
@@ -760,8 +756,7 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Ultrasonic_Sensor___Sensor_Monitoring__UltrasonicReceiver_Receiving_react(long transitioned_before) {
@@ -776,12 +771,12 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Ultrasonic_Sensor___Sensor_Monitoring__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Ultrasonic_Sensor___off__react(long transitioned_before) {
@@ -795,12 +790,12 @@ public class Ultrasonic_Sensor implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

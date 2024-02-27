@@ -6,7 +6,7 @@ import com.yakindu.core.IStatemachine;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Active_Systems_Counter implements IStatemachine, IEventDriven {
+public class Active_Systems_Counter implements IEventDriven {
 	public static class Counter {
 		private Active_Systems_Counter parent;
 		
@@ -100,8 +100,7 @@ public class Active_Systems_Counter implements IStatemachine, IEventDriven {
 		/* Activates the state machine. */
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Active_Systems_Counter */
@@ -112,8 +111,7 @@ public class Active_Systems_Counter implements IStatemachine, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Active_Systems_Counter */
@@ -155,8 +153,7 @@ public class Active_Systems_Counter implements IStatemachine, IEventDriven {
 		/* Performs a 'run to completion' step. */
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -261,8 +258,7 @@ public class Active_Systems_Counter implements IStatemachine, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long main_region_StaticUpdate_react(long transitioned_before) {
@@ -285,12 +281,12 @@ public class Active_Systems_Counter implements IStatemachine, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

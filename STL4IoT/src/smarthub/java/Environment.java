@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Environment implements IStatemachine, ITimed, IEventDriven {
+public class Environment implements ITimed, IEventDriven {
 	public static class Clock {
 		private Environment parent;
 		
@@ -469,8 +469,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Environment */
@@ -481,8 +480,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Environment */
@@ -604,8 +602,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1569,8 +1566,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long simEnvironment_Stop_Simulation_react(long transitioned_before) {
@@ -1584,12 +1580,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_react(long transitioned_before) {
@@ -1603,12 +1599,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Initialization_Initialize_Simulation_react(long transitioned_before) {
@@ -1621,14 +1617,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Initialization_Run_react(long transitioned_before) {
 		/* The reactions of state Run. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long simEnvironment_Start_Simulation_Initialization_Run_r1_LaunchGlobalClock_react(long transitioned_before) {
@@ -1650,12 +1644,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_Initialization_Run_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Initialization_Run_r1_LaunchSimulation_react(long transitioned_before) {
@@ -1669,12 +1663,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_Initialization_Run_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Initialization_Run_r1_EvaluatorTerminated_react(long transitioned_before) {
@@ -1688,15 +1682,15 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[0]) {
 				simulator.raiseCycle();
 			}
 			transitioned_after = simEnvironment_Start_Simulation_Initialization_Run_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Clock_Stop_Clock_react(long transitioned_before) {
@@ -1709,8 +1703,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Clock_Run_Clock_react(long transitioned_before) {
@@ -1723,8 +1716,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Clock_Run_Clock_running_Running_react(long transitioned_before) {
@@ -1745,12 +1737,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_Clock_Run_Clock_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Sensors_LaunchSensors_react(long transitioned_before) {
@@ -1763,8 +1755,7 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_Sensors_SendingSignalToSensors_react(long transitioned_before) {
@@ -1778,17 +1769,18 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_react(long transitioned_before) {
 		/* The reactions of state EnvironmentEvaluator. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = simEnvironment_Start_Simulation_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = simEnvironment_Start_Simulation_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_OnWait_react(long transitioned_before) {
@@ -1802,21 +1794,23 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(long transitioned_before) {
 		/* The reactions of state Simulating. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_launch_react(long transitioned_before) {
@@ -1831,12 +1825,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_reading_react(long transitioned_before) {
@@ -1851,12 +1845,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_monitoring_react(long transitioned_before) {
@@ -1877,12 +1871,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_monitoring_r1_generate_random_numbers_react(long transitioned_before) {
@@ -1897,12 +1891,12 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_monitoring_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_monitoring_r1_feed_values__react(long transitioned_before) {
@@ -1917,21 +1911,23 @@ public class Environment implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_monitoring_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_F_terminate_react(long transitioned_before) {
 		/* The reactions of state terminate. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = simEnvironment_Start_Simulation_SmartFire_Evaluator_EnvironmentEvaluator_r1_Simulating_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

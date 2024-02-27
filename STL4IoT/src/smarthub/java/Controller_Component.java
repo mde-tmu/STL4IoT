@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Controller_Component implements IStatemachine, ITimed, IEventDriven {
+public class Controller_Component implements ITimed, IEventDriven {
 	public static class Sensors {
 		private Controller_Component parent;
 		
@@ -122,8 +122,7 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Controller_Component */
@@ -134,8 +133,7 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Controller_Component */
@@ -192,8 +190,7 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -459,8 +456,7 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Controller_Component___Controller_isON__react(long transitioned_before) {
@@ -474,12 +470,12 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Controller_Component___Controller_isON___Controller_Receiving_and_Sending_Signals___Reading_Sensor_Data__react(long transitioned_before) {
@@ -501,12 +497,12 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Controller_Component___Controller_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Controller_Component___Controller_isON___Controller_Receiving_and_Sending_Signals___Controller_Proccesing__react(long transitioned_before) {
@@ -520,19 +516,19 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Controller_Component___Controller_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Controller_Component___Controller_isON___Controller_Receiving_and_Sending_Signals___Trigger_Actuator__react(long transitioned_before) {
 		/* The reactions of state <Trigger_Actuator>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (!sensors.getTriggered()) {
+			if (!(sensors.getTriggered())) {
 				exitSequence__Controller_Component___Controller_isON___Controller_Receiving_and_Sending_Signals___Trigger_Actuator_();
 				enterSequence__Controller_Component___Controller_isON___Controller_Receiving_and_Sending_Signals___Reading_Sensor_Data__default();
 				_Controller_Component___Controller_isON__react(0l);
@@ -547,12 +543,12 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Controller_Component___Controller_isON__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Controller_Component___off__react(long transitioned_before) {
@@ -566,12 +562,12 @@ public class Controller_Component implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

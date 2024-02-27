@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
+public class Hub_PowerManager implements ITimed, IEventDriven {
 	public enum State {
 		_HUB_POWERMANAGER__MONITORING_POWER_CONSUMPTION,
 		_HUB_POWERMANAGER__THRESHOLD_REACHED,
@@ -64,8 +64,7 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Hub_PowerManager */
@@ -76,8 +75,7 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Hub_PowerManager */
@@ -131,8 +129,7 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -472,8 +469,7 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _HUB_PowerManager__monitoring_power_consumption_react(long transitioned_before) {
@@ -496,12 +492,12 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_PowerManager__threshold_reached_react(long transitioned_before) {
@@ -516,21 +512,23 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_PowerManager__threshold_reached__Return_DeviceIndex_To_Be_TurnedOFF__initialize_last_value_react(long transitioned_before) {
 		/* The reactions of state initialize_last_value. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _HUB_PowerManager__threshold_reached_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _HUB_PowerManager__threshold_reached_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _HUB_PowerManager__double_check_react(long transitioned_before) {
@@ -555,12 +553,12 @@ public class Hub_PowerManager implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

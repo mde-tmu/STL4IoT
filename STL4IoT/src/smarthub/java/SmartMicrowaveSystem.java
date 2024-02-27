@@ -15,7 +15,7 @@ import smarthub.java.Network_Component;
 import smarthub.java.Power_Component;
 import smarthub.java.Sensor_Component;
 
-public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven {
+public class SmartMicrowaveSystem implements ITimed, IEventDriven {
 	public static class System {
 		private SmartMicrowaveSystem parent;
 		
@@ -247,8 +247,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart SmartMicrowaveSystem */
@@ -259,8 +258,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart SmartMicrowaveSystem */
@@ -395,8 +393,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1490,17 +1487,15 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_react(long transitioned_before) {
 		/* The reactions of state SmartMicrowaveSystem. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_SystemStatus_off_react(long transitioned_before) {
@@ -1513,8 +1508,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_SystemStatus_on_react(long transitioned_before) {
@@ -1534,8 +1528,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ActuatorComponent__Actuator_Updates__react(long transitioned_before) {
@@ -1561,15 +1554,14 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ActuatorComponent__Device_Functioning__react(long transitioned_before) {
 		/* The reactions of state <Device_Functioning>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<1l) {
-			if (!getActuator().getIsTriggered()) {
+			if (!(getActuator().getIsTriggered())) {
 				exitSequence__SmartMicrowaveSystem__SmartMicrowaveSystem_ActuatorComponent__Device_Functioning_();
 				enterSequence__SmartMicrowaveSystem__SmartMicrowaveSystem_ActuatorComponent__Actuator_Updates__default();
 				transitioned_after = 1l;
@@ -1581,14 +1573,14 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			if (timeEvents[2]) {
 				mW.setFood_inside_sensed(actuator.getIsTriggered());
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ActuatorComponent_off_react(long transitioned_before) {
@@ -1601,8 +1593,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 1l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ControllerComponent__Initialize_Controller_Component__react(long transitioned_before) {
@@ -1615,8 +1606,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ControllerComponent__Initialize_Controller_Component__updating__Controller_Updates__react(long transitioned_before) {
@@ -1631,12 +1621,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 2l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_ControllerComponent__Initialize_Controller_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_ControllerComponent_off_react(long transitioned_before) {
@@ -1649,8 +1639,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 2l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_SensorComponent__Initialize_Sensor_Component__react(long transitioned_before) {
@@ -1663,8 +1652,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_SensorComponent__Initialize_Sensor_Component__updating__Sensor_Updates__react(long transitioned_before) {
@@ -1679,12 +1667,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 3l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_SensorComponent__Initialize_Sensor_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_SensorComponent_off_react(long transitioned_before) {
@@ -1697,8 +1685,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_NetworkComponent__Initialize_WiFi_Component__react(long transitioned_before) {
@@ -1711,8 +1698,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_NetworkComponent__Initialize_WiFi_Component__updating__WiFi_Updates__react(long transitioned_before) {
@@ -1727,12 +1713,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 4l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_NetworkComponent__Initialize_WiFi_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_NetworkComponent_off_react(long transitioned_before) {
@@ -1745,8 +1731,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 4l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_PowerCalculatorComponent__Initialize_Power_Component__react(long transitioned_before) {
@@ -1759,8 +1744,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_PowerCalculatorComponent__Initialize_Power_Component__updating__Power_Updates__react(long transitioned_before) {
@@ -1775,12 +1759,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_PowerCalculatorComponent__Initialize_Power_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_PowerCalculatorComponent_off_react(long transitioned_before) {
@@ -1793,8 +1777,7 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 5l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(long transitioned_before) {
@@ -1808,12 +1791,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__updating__Temperature_Updates__react(long transitioned_before) {
@@ -1828,12 +1811,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_trackingDeviceTemperature__Initialize_DeviceTemp_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _SmartMicrowaveSystem__SmartMicrowaveSystem_trackingDeviceTemperature_off_react(long transitioned_before) {
@@ -1847,12 +1830,12 @@ public class SmartMicrowaveSystem implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 6l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _SmartMicrowaveSystem__SmartMicrowaveSystem_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

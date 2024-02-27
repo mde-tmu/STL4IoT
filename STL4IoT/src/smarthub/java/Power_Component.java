@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Power_Component implements IStatemachine, ITimed, IEventDriven {
+public class Power_Component implements ITimed, IEventDriven {
 	public static class Device {
 		private Power_Component parent;
 		
@@ -87,8 +87,7 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Power_Component */
@@ -99,8 +98,7 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Power_Component */
@@ -149,8 +147,7 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -408,17 +405,15 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _Power_Component__Power_Component_react(long transitioned_before) {
 		/* The reactions of state Power_Component. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Power_Component__Power_Component__Calculating_Power_Consumption___NoPowerConsumed__react(long transitioned_before) {
@@ -432,12 +427,12 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Power_Component__Power_Component_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _Power_Component__Power_Component__Calculating_Power_Consumption___Consuming_Power__react(long transitioned_before) {
@@ -452,7 +447,7 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 				_Power_Component__Power_Component_react(0l);
 				transitioned_after = 0l;
 			} else {
-				if (!device.getIsOn()) {
+				if (!(device.getIsOn())) {
 					exitSequence__Power_Component__Power_Component__Calculating_Power_Consumption___Consuming_Power_();
 					enterSequence__Power_Component__Power_Component__Calculating_Power_Consumption___NoPowerConsumed__default();
 					_Power_Component__Power_Component_react(0l);
@@ -460,12 +455,12 @@ public class Power_Component implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _Power_Component__Power_Component_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

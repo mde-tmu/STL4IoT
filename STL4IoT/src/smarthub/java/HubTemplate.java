@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import smarthub.java.Hub_PowerManager;
 
-public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
+public class HubTemplate implements ITimed, IEventDriven {
 	public static class HUB {
 		private HubTemplate parent;
 		
@@ -370,8 +370,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart HubTemplate */
@@ -382,8 +381,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart HubTemplate */
@@ -506,8 +504,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -1384,8 +1381,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _HUB_Template__HubOff_react(long transitioned_before) {
@@ -1399,12 +1395,12 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_react(long transitioned_before) {
@@ -1418,18 +1414,17 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 5l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_react(long transitioned_before) {
 		/* The reactions of state SmartHubSystemStatus. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_AllSystemsOFF_react(long transitioned_before) {
@@ -1443,12 +1438,12 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_react(long transitioned_before) {
@@ -1462,12 +1457,12 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_System1_System1ON_react(long transitioned_before) {
@@ -1480,8 +1475,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_System1_System1OFF_react(long transitioned_before) {
@@ -1494,8 +1488,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_System2_System2ON_react(long transitioned_before) {
@@ -1509,12 +1502,12 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_System2_System2OFF_react(long transitioned_before) {
@@ -1528,12 +1521,12 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 1l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _HUB_Template__HUBTemplate_SmartHubRegion_SmartHubSystemStatus_HubStatusRegion_System_Manager_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_PowerConsumptionRegion_PowerConsumptionCalculator_react(long transitioned_before) {
@@ -1553,15 +1546,14 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(long transitioned_before) {
 		/* The reactions of state IOT_EnergySaverManager. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<2l) {
-			if (!power.getThresholdReached()) {
+			if (!(power.getThresholdReached())) {
 				exitSequence__HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager();
 				enterSequence__HUB_Template__HUBTemplate_PowerConsumptionRegion_PowerConsumptionCalculator_default();
 				transitioned_after = 2l;
@@ -1574,32 +1566,34 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold_System1_react(long transitioned_before) {
 		/* The reactions of state System1. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold_System2_react(long transitioned_before) {
 		/* The reactions of state System2. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_turningoff_device_overthreshold__final__react(long transitioned_before) {
 		/* The reactions of state null. */
-		return _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before)
-		;
+		return _HUB_Template__HUBTemplate_PowerConsumptionRegion_IOT_EnergySaverManager_react(transitioned_before);
 	}
 	
 	private long _HUB_Template__HUBTemplate_NetworkRegion_No_Connection_react(long transitioned_before) {
@@ -1612,8 +1606,7 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_NetworkRegion_Connected_react(long transitioned_before) {
@@ -1626,23 +1619,23 @@ public class HubTemplate implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 3l;
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _HUB_Template__HUBTemplate_System1Region_System1_status_react(long transitioned_before) {
 		/* The reactions of state System1_status. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _HUB_Template__HUBTemplate_System2Region_System2_status_react(long transitioned_before) {
 		/* The reactions of state System2_status. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
-		transitioned_after = _HUB_Template__HUBTemplate_react(transitioned_before);
-		return transitioned_after
-		;
+		/* If no transition was taken */
+		if (transitioned_after==transitioned_before) {
+			/* then execute local reactions. */
+			transitioned_after = _HUB_Template__HUBTemplate_react(transitioned_before);
+		}
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

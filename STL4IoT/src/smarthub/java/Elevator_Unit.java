@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
+public class Elevator_Unit implements ITimed, IEventDriven {
 	public static class Direction {
 		private Elevator_Unit parent;
 		
@@ -255,8 +255,7 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart Elevator_Unit */
@@ -276,8 +275,7 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart Elevator_Unit */
@@ -375,8 +373,7 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -901,14 +898,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long main_region__Elevator_Unavailable__react(long transitioned_before) {
 		/* The reactions of state <Elevator_Unavailable>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (toggle) {
 					exitSequence_main_region__Elevator_Unavailable_();
@@ -917,19 +913,19 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 0l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__react(long transitioned_before) {
 		/* The reactions of state <Elevator_Available>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (toggle) {
 					exitSequence_main_region__Elevator_Available_();
@@ -938,19 +934,19 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 3l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__activity__idle__react(long transitioned_before) {
 		/* The reactions of state <idle>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (inUse) {
 					exitSequence_main_region__Elevator_Available__activity__idle_();
@@ -959,14 +955,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__activity__active__react(long transitioned_before) {
 		/* The reactions of state <active>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<0l) {
 				if (stopped) {
 					exitSequence_main_region__Elevator_Available__activity__active_();
@@ -975,14 +970,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__movement__upwards__react(long transitioned_before) {
 		/* The reactions of state <upwards>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (direction.down) {
 					exitSequence_main_region__Elevator_Available__movement__upwards_();
@@ -1005,14 +999,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__movement__downwards__react(long transitioned_before) {
 		/* The reactions of state <downwards>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (direction.up) {
 					exitSequence_main_region__Elevator_Available__movement__downwards_();
@@ -1035,14 +1028,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__movement__standby__react(long transitioned_before) {
 		/* The reactions of state <standby>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<1l) {
 				if (direction.down) {
 					exitSequence_main_region__Elevator_Available__movement__standby_();
@@ -1057,14 +1049,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__level__ElevatorLevel__react(long transitioned_before) {
 		/* The reactions of state <ElevatorLevel>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<2l) {
 				if (level.getCurrent()>level.getUserLocation()) {
 					exitSequence_main_region__Elevator_Available__level__ElevatorLevel_();
@@ -1081,14 +1072,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__level__ElevatorLevel__r1__readingDataFromElevator__react(long transitioned_before) {
 		/* The reactions of state <readingDataFromElevator>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<2l) {
 				if (((timeEvents[2]) && (level.getCurrent()==level.getUserLocation()))) {
 					exitSequence_main_region__Elevator_Available__level__ElevatorLevel__r1__readingDataFromElevator_();
@@ -1099,19 +1089,19 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 					transitioned_after = 2l;
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = main_region__Elevator_Available__level__ElevatorLevel__react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__input__gettingInput__react(long transitioned_before) {
 		/* The reactions of state <gettingInput>. */
 		long transitioned_after = transitioned_before;
-		if (!getDoCompletion()) {
+		if (!(getDoCompletion())) {
 			if (transitioned_after<3l) {
 				if (input.submit) {
 					exitSequence_main_region__Elevator_Available__input__gettingInput_();
@@ -1136,13 +1126,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 					}
 				}
 			}
+			/* If no transition was taken */
 			if (transitioned_after==transitioned_before) {
-				/* If no transition was taken then execute local reactions */
+				/* then execute local reactions. */
 				transitioned_after = main_region__Elevator_Available__react(transitioned_before);
 			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long main_region__Elevator_Available__input__submitInput__react(long transitioned_before) {
@@ -1157,11 +1147,13 @@ public class Elevator_Unit implements IStatemachine, ITimed, IEventDriven {
 			stateConfVectorPosition = 3;
 			main_region__Elevator_Available__react(0l);
 		} else {
-			/* If no transition was taken then execute local reactions */
-			transitioned_after = main_region__Elevator_Available__react(transitioned_before);
+			/* If no transition was taken */
+			if (transitioned_after==transitioned_before) {
+				/* then execute local reactions. */
+				transitioned_after = main_region__Elevator_Available__react(transitioned_before);
+			}
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

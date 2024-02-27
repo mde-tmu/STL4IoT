@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven {
+public class DeviceTemp_Component implements ITimed, IEventDriven {
 	public static class Device {
 		private DeviceTemp_Component parent;
 		
@@ -215,8 +215,7 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart DeviceTemp_Component */
@@ -227,8 +226,7 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart DeviceTemp_Component */
@@ -287,8 +285,7 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -602,17 +599,15 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component__react(long transitioned_before) {
 		/* The reactions of state <Temperature_Component>. */
 		long transitioned_after = transitioned_before;
-		/* If no transition was taken then execute local reactions */
+		/* Always execute local reactions. */
 		transitioned_after = react(transitioned_before);
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__restState_react(long transitioned_before) {
@@ -633,19 +628,19 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__heatingUp_react(long transitioned_before) {
 		/* The reactions of state heatingUp. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (!device.getIsOn()) {
+			if (!(device.getIsOn())) {
 				exitSequence__DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__heatingUp();
 				enterSequence__DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__restState_default();
 				_DeviceTemp_Component___Temperature_Component__react(0l);
@@ -674,19 +669,19 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__overheat_react(long transitioned_before) {
 		/* The reactions of state overheat. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if ((((timeEvents[1] || heat.continueEvent)) && (!heat.getUser_warned()))) {
+			if ((((timeEvents[1] || heat.continueEvent)) && (!(heat.getUser_warned())))) {
 				exitSequence__DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__overheat();
 				heat.setUser_warned(true);
 				timeEvents[1] = false;
@@ -694,7 +689,7 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				_DeviceTemp_Component___Temperature_Component__react(0l);
 				transitioned_after = 0l;
 			} else {
-				if (!device.getIsOn()) {
+				if (!(device.getIsOn())) {
 					exitSequence__DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__overheat();
 					enterSequence__DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState_default();
 					_DeviceTemp_Component___Temperature_Component__react(0l);
@@ -702,12 +697,12 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState_react(long transitioned_before) {
@@ -721,12 +716,12 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState__Device_Cooling_Down__cooling_react(long transitioned_before) {
@@ -748,12 +743,12 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState__Device_Cooling_Down__fully_rested_react(long transitioned_before) {
@@ -767,12 +762,12 @@ public class DeviceTemp_Component implements IStatemachine, ITimed, IEventDriven
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _DeviceTemp_Component___Temperature_Component___Monitoring_Device_Temperature__coolingState_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */

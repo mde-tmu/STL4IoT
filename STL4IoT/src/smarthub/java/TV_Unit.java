@@ -8,7 +8,7 @@ import com.yakindu.core.ITimerService;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
+public class TV_Unit implements ITimed, IEventDriven {
 	public static class Device {
 		private TV_Unit parent;
 		
@@ -183,8 +183,7 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default enter sequence for statechart TV_Unit */
@@ -195,8 +194,7 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 	public synchronized void exit() {
 		/* Deactivates the state machine. */
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		/* Default exit sequence for statechart TV_Unit */
@@ -256,8 +254,7 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 		}
 		
 		if (getIsExecuting()) {
-			return
-			;
+			return;
 		}
 		isExecuting = true;
 		nextEvent();
@@ -557,15 +554,14 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 	
 	private long react(long transitioned_before) {
 		/* State machine reactions. */
-		return transitioned_before
-		;
+		return transitioned_before;
 	}
 	
 	private long _TV_Unit___TV_On__react(long transitioned_before) {
 		/* The reactions of state <TV_On>. */
 		long transitioned_after = transitioned_before;
 		if (transitioned_after<0l) {
-			if (((timeEvents[0]) && (!device.getIsOn()))) {
+			if (((timeEvents[0]) && (!(device.getIsOn())))) {
 				exitSequence__TV_Unit___TV_On_();
 				timeEvents[0] = false;
 				enterSequence__TV_Unit___TV_onSleep__default();
@@ -580,12 +576,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TV_Unit___TV_On___TV_Working__satelliteTV_react(long transitioned_before) {
@@ -606,12 +602,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _TV_Unit___TV_On__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TV_Unit___TV_On___TV_Working__satelliteTV__Changing_Channel__changeChannel_react(long transitioned_before) {
@@ -626,12 +622,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _TV_Unit___TV_On___TV_Working__satelliteTV_react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TV_Unit___TV_On___TV_Working__cable_react(long transitioned_before) {
@@ -652,12 +648,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _TV_Unit___TV_On__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TV_Unit___TV_On___TV_Working__hdmi_react(long transitioned_before) {
@@ -678,12 +674,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				}
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = _TV_Unit___TV_On__react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	private long _TV_Unit___TV_onSleep__react(long transitioned_before) {
@@ -697,12 +693,12 @@ public class TV_Unit implements IStatemachine, ITimed, IEventDriven {
 				transitioned_after = 0l;
 			}
 		}
+		/* If no transition was taken */
 		if (transitioned_after==transitioned_before) {
-			/* If no transition was taken then execute local reactions */
+			/* then execute local reactions. */
 			transitioned_after = react(transitioned_before);
 		}
-		return transitioned_after
-		;
+		return transitioned_after;
 	}
 	
 	/* Can be used by the client code to trigger a run to completion step without raising an event. */
