@@ -16,7 +16,7 @@ Professor Sadaf Mustafiz M.Sc. Ph.D.
 
 John-Clyde Rempillo B.Sc.
 ## Main Github Webpage
-[Click here to visit the main webpage](https://mde-tmu.github.io/iot-sc-template-library/)
+[Click here to visit the main webpage](https://mde-tmu.github.io/STL4IoT/)
 
 ## Installation
 
